@@ -1,21 +1,4 @@
-// const q="travel";
-// const limit= 1;
-// const key="xr36JpsP033KfmDe2JLnczqLinBF57cf";
-// let url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${q}&limit=${limit}&offset=0&rating=g&lang=en`;
-// console.log(url);
-// fetch(url)
-// .then(response => response.json())
-// .then(content => {
-//     console.log(content.data);
-//     console.log("META", content.meta);
-//     let fig = document.createElement("figure");
-//     let img = document.createElement("img");
-//     img.src = content.data[0].images.downsized.url;
-//     fig.appendChild(img);
-//     let out = document.querySelector(".gifs");
-//     out.insertAdjacentElement("afterbegin", fig);
-// })
-
+//for the GIF feature 
 let APIKEY = "EmK1vBdg1ZIGje2nKx614fyuVDlGOxjE";
 // you will need to get your own API KEY
 // https://developers.giphy.com/dashboard/
@@ -50,3 +33,30 @@ function init() {
       });
   });
 }
+
+
+//hashtag feature 
+let input, hashtagArray, container, t;
+
+input = document.querySelector('#hashtags');
+container = document.querySelector('.tag-container');
+hashtagArray = [];
+
+input.addEventListener('keyup', e => {
+    if (e.which == 13 && input.value.length > 0) {
+      var text = document.createTextNode(input.value);
+      var p = document.createElement('p');
+      container.appendChild(p);
+      p.appendChild(text);
+      p.classList.add('tag');
+      input.value = '';
+      
+      let deleteTags = document.querySelectorAll('.tag');
+      
+      for(let i = 0; i < deleteTags.length; i++) {
+        deleteTags[i].addEventListener('click', () => {
+          container.removeChild(deleteTags[i]);
+        });
+      }
+    }
+});
