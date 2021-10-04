@@ -25,11 +25,20 @@
     <h2>This website allows you to post about your travel experience. Please add your post below:</h2>
 
       <form> 
+        <div class="filter-group">
+            <label>Please select a category: </label>
+            <select class="form-control">
+                <option>Entertainment</option>
+                <option>Food and Drink</option>
+                <option>Sightseeing</option>
+            </select>
+        </div>
         <div>
         <textarea name="comments" id="comments" maxlength="500">
         Location:
         </textarea>
         </div>
+       
         <input type ="submit" id = "journalpost" value ="Submit post">
         </form>
         <!--<div class="gifs"></div>!-->
