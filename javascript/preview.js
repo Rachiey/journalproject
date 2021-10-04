@@ -19,3 +19,7 @@ fetch(url)
     let out = document.querySelector(".gifs");
     out.insertAdjacentElement("afterbegin", fig);
 })
+
+const sent="A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational institutes and universities, a project is a research assignment - given to a student - which generally requires a larger amount of effort and more independent work than that involved in a normal essay assignment. It requires students to undertake their own fact-finding and analysis, either from library/internet research or from gathering data empirically. The written report that comes from the project is usually in the form of a dissertation, which will contain sections on the project's inception, analysis, findings and conclusions.";
+const para=document.getElementById("p");
+para.innerHTML=sent.substring(0,200);

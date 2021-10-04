@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-    background-color:rgb(187, 131, 11);
     margin: 0%;
 }
 
@@ -23,8 +22,15 @@ h1{
 h2{
     margin-left: 2px;
     display: inline-block;
-    width:  calc((0.3 * 100vw)/3);;
+    width:  calc((0.3 * 100vw)/3);
 }
+
+img.gifs{
+    width: 320px;
+    height: 320px;
+    margin-left: calc((calc(100vw/3) - 300px)/2);
+  }
+
 
 article{
     height: 70vh;
@@ -35,15 +41,19 @@ article{
 article section {
     width: calc(100vw/3);
     border: 4px solid whitesmoke;
+    height: 35vh;
+}
+
+.plus{
+    font-size: 30px;
+    text-align: right;
+    display: inline-block;
+    background-color: lightcoral;
+    margin-left: calc(calc(100vw/3) - 30px);
 }
 
 
-article section  {
-    background-color: rgb(218, 189, 97);
-}
-
-
-@media only screen and (max-width: 750px){
+@media only screen and (max-width: 1000px){
 
     header{
         height: 10vh;
@@ -56,11 +66,32 @@ article section  {
     article > section{
         width: 50%;
     }
+
+    img.gifs{
+        width: 270px;
+        height: auto;
+        margin-left: calc((calc(100vw/2) - 270px)/2);
+    }
+
+    h1{
+        width:  calc((0.6 * 100vw)/2);
+        display: inline-block;
+        text-align: center;
+        font-size: xx-large;
+        margin-top: 10px;
+    }
+    
+    h2{
+        margin-left: 2px;
+        display: inline-block;
+        width:  calc((0.3 * 100vw)/2);;
+    }
+    
    
 }
 
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
 
     header{
         height: 8vh;
@@ -79,11 +110,27 @@ article section  {
         width: 100vw;
         
     }
-/* 
-    main > article {
-        height: calc(100vh - var(--stripsheight));
-    } */
 
+    img.gifs{
+        width: 250px;
+        height: auto;
+        margin-left: calc((100vw - 250px)/2);
+    }
+
+    h1{
+        width:  calc(0.6 * 100vw);
+        display: inline-block;
+        text-align: center;
+        font-size: xx-large;
+        margin-top: 10px;
+    }
+    
+    h2{
+        margin-left: 2px;
+        display: inline-block;
+        width: calc(0.3 * 100vw);
+    }
+    
 }
 
 @media only screen and (max-width: 360px){
@@ -92,12 +139,31 @@ article section  {
         height: 6vh;
     }
 
-    h2{
-        font-size: 27px;
-    }
 
     article{
         height: 94vh;
     }
     
+    img.gifs{
+        width: 200px;
+        height: auto;
+        margin-left: calc((100vw - 200px)/2);
+    }
+
+    h1{
+        width:  calc(0.6 * 100vw);
+        display: inline-block;
+        text-align: center;
+        font-size: xx-large;
+        margin-top: 10px;
+    }
+    
+    h2{
+        margin-left: 2px;
+        display: inline-block;
+        width: calc(0.3 * 100vw);
+        
+    }
+
 }
+
