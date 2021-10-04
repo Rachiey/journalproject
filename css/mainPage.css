@@ -52,9 +52,19 @@ header {
     color: white;
   }
 
+  textarea {
+      resize: both; 
+      height: 250px;
+      width: 500px;
+  }
+
+  form {
+      margin-bottom: 10px;
+  }
+
 footer {
     background-color: grey;
     padding: 5px;
     margin-top: auto;
-    height: 150px;
+    height: 60px;
 }
