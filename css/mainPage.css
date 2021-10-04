@@ -1,6 +1,13 @@
 body {
     text-align: center;
 }
+
+header {
+    background-color: grey;
+    padding: 5px;
+    margin: 10px;
+    height: 150px;
+}
 .header img {
     float: left;
     width: 100px;
@@ -15,5 +22,5 @@ body {
     left: 10px;
   }
 h1 {
-    color: red;
+    color: black;
 }
