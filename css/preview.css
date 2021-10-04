@@ -45,11 +45,11 @@ article section {
 }
 
 .plus{
-    font-size: 30px;
+    font-size: 40px;
     text-align: right;
     display: inline-block;
-    background-color: lightcoral;
-    margin-left: calc(calc(100vw/3) - 30px);
+    margin-left: calc(calc(100vw/3) - 40px);
+    margin-top: 5px;
 }
 
 
@@ -85,6 +85,14 @@ article section {
         margin-left: 2px;
         display: inline-block;
         width:  calc((0.3 * 100vw)/2);;
+    }
+
+    .plus{
+        font-size: 30px;
+        text-align: right;
+        display: inline-block;
+        margin-left: calc(calc(100vw/2) - 30px);
+        margin-top: 5px;
     }
     
    
@@ -129,6 +137,14 @@ article section {
         margin-left: 2px;
         display: inline-block;
         width: calc(0.3 * 100vw);
+    }
+
+    .plus{
+        font-size: 30px;
+        text-align: right;
+        display: inline-block;
+        margin-left: calc(100vw - 30px);
+        margin-top: 5px;
     }
     
 }
