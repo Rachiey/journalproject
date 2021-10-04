@@ -1,0 +1,15 @@
+section {
+    border: 2px solid black;
+    margin: 50px 100px;
+}
+
+#journalHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+#reactAndComment {
+    display: flex;
+    justify-content: space-between;
+}
+
