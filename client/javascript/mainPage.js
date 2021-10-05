@@ -1,29 +1,18 @@
-// Selectors
-const counterPost = document.getElementById("charCounterPost");
-
-// const newPost = document.getElementById("newPost");
-// const gifSearchButton = document.getElementById("gifs");
-// const addGifButton = document.querySelector("#addGif");
-// const addPostButton = document.getElementById("journalsubmit");
-// Adding a visible remaining characters feature 
-newPost.addEventListener("input", (e) => {
-    const target = e.target;
-    const maxLength = target.getAttribute("maxlength");
-    let currentLength = target.value.length;
-    counterPost.textContent = `${maxLength - currentLength} characters remaining`;
-  // Button is enabled since textarea has text:
-  addPostButton.disabled = false;
-});
+//for the GIF feature 
+let APIKEY = "EmK1vBdg1ZIGje2nKx614fyuVDlGOxjE";
+// you will need to get your own API KEY
+// https://developers.giphy.com/dashboard/
 
 
-//Giphy feature 
-let apiKey = "EmK1vBdg1ZIGje2nKx614fyuVDlGOxjE";
-let results = document.querySelector('.giphy-search__results');
 
-function fetchGiphy() {
-    results.innerHTML = '';
-    let str = document.querySelector('#gif-search-bar').value.trim();
-    let url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&limit=1&q=${str}`;
+document.addEventListener("DOMContentLoaded", init);
+function init() {
+  document.getElementById("btnSearch").addEventListener("click", ev => {
+    ev.preventDefault(); //to stop the page reload
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=`;
+    let str = document.getElementById("search").value.trim();
+    url = url.concat(str);
+    console.log(url);
     fetch(url)
         .then(resp => resp.json())
         .then(json => {
@@ -57,6 +46,7 @@ const addSelectedGifToPost = event => {
         postContent.appendChild(gifImage);
         gifSearchModal.style.visibility = 'hidden';
     }
+<<<<<<< HEAD
 };
 
 const searchbar = document.querySelector('.giphy-search__container input');
@@ -100,3 +90,46 @@ gifImageContainer.addEventListener('click', addSelectedGifToPost);
 //             });
 //         });
 //       };
+=======
+});
+
+//katie messing with stuff
+const submitButton = document.getElementById('journalpost');
+const journalPostSubmission = document.getElementById('comments');
+const locationInput = document.getElementById('location')
+
+function submitPost(e) {
+  console.log(journalPostSubmission.value);
+  console.log(locationInput.value);
+
+  const data = {
+    location: locationInput.value,
+    post: journalPostSubmission.value,
+    gif: `${img.src}` //figure out how to access img.src
+  }
+
+  console.log(data.gif);
+
+  //if the user doesn't write anything, do post anything
+  if(data.post === "") {
+    return;
+  }
+
+  //somehow handle what to do if the user doesn't want to add a gif
+  //actually I don't think this is needed because of how the constructor works?
+  
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(data)
+  }
+  fetch('http://localhost:3000/posts', options)
+    .then(console.log(data))
+    .catch(err => console.warn('Oops, something went wrong.'))
+}
+
+submitButton.addEventListener('click', e => {
+  e.preventDefault();
+  submitPost(e);
+})
+
+>>>>>>> 7c9cb954bc020deeb64f639676a23fb5a07195c3
