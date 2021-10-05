@@ -50,6 +50,7 @@ post_2.addEventListener('click', (e) => {
         newHeader.className="post";
         newH1.className="titles";
         newH2.className="locs";
+        sector.className="selection";
         newHeader.append(newH2);
         newHeader.append(newH1);
         sector.append(newHeader);

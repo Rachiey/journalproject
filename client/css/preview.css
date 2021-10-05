@@ -75,7 +75,7 @@ header{
     height: var(--headerheight);
 }
 
-section header{
+.selection .post{
     height: 5vh;
 }
 

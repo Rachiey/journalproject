@@ -3,16 +3,16 @@
         "id": 1,
         "location": "France",
         "post": "I had a really nice holiday!",
-        "gif": "",
-        "comments": [],
+        "gif": "https://media4.giphy.com/media/9A3t72abirdtyull0m/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g",
+        "comments": ["great","well done","working"],
         "reactions": {"smile": 2, "laugh": 0, "love": 3}
     },
     {
         "id": 2,
         "location": "London",
         "post": "The sights were great!",
-        "gif": "",
-        "comments": [],
+        "gif": "https://media4.giphy.com/media/9A3t72abirdtyull0m/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g",
+        "comments": ["great","well done","working"],
         "reactions": {"smile": 4, "laugh": 1, "love": 5}
     },
     {
@@ -20,7 +20,7 @@
         "location": "Germany",
         "post": "The food here was delicious!",
         "gif": "",
-        "comments": [],
+        "comments": ["great","well done","working"],
         "reactions": {"smile": 6, "laugh": 3, "love": 4}
     }
 ]
