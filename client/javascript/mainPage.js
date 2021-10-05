@@ -64,7 +64,7 @@ input.addEventListener('keyup', e => {
     }
 });
 
-//katie messing with stuff
+
 //submitting the post
 const submitButton = document.getElementById('journalpost');
 const journalPostSubmission = document.getElementById('comments');
@@ -86,9 +86,6 @@ function submitPost(e) {
   if(data.post === "") {
     return;
   }
-
-  //somehow handle what to do if the user doesn't want to add a gif
-  //actually I don't think this is needed because of how the constructor works?
   
   const options = {
     method: 'POST',
