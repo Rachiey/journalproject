@@ -22,7 +22,7 @@ app.get("/posts/:id", (req, res) => {
 //POST
 //adds new post
 app.post("/posts", (req, res) => {
-    Post.addNewPost(req.body); 
+    Post.addNewPost(req.body);
     res.statusCode = 201;
     res.send(Post.all);
 })

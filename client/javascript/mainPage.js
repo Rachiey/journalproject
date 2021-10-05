@@ -82,7 +82,7 @@ function submitPost(e) {
     //gif: `${img.src}` //figure out how to access img.src
   }
 
-  //if the user doesn't write anything, do post anything
+  //if the user doesn't write anything, don't post anything
   if(data.post === "") {
     return;
   }
@@ -100,7 +100,6 @@ function submitPost(e) {
 }
 
 submitButton.addEventListener('click', e => {
-  e.preventDefault();
   submitPost(e);
 })
 
