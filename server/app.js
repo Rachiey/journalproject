@@ -4,7 +4,7 @@ const Post = require('./model');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const Post = require('./model');
+
 app.use(cors());
 
 //GET

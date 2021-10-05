@@ -1,4 +1,5 @@
 const post_1=document.getElementById("post_1");
+const post_2=document.getElementById("post_2");
 const classOverview=document.getElementById("classOverview");
 
 const q="travel";
@@ -25,6 +26,32 @@ fetch(url)
 const sent="A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational institutes and universities, a project is a research assignment - given to a student - which generally requires a larger amount of effort and more independent work than that involved in a normal essay assignment. It requires students to undertake their own fact-finding and analysis, either from library/internet research or from gathering data empirically. The written report that comes from the project is usually in the form of a dissertation, which will contain sections on the project's inception, analysis, findings and conclusions.";
 const para=document.getElementById("p");
 para.innerHTML=sent.substring(0,130);
+
+post_2.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    fetch('http://localhost:3000/posts')
+    .then(obj => obj.json())
+    .then(data => setValues(data.all))
+
+    function setValues(data){
+        console.log(data[1].post);
+    // for (let i = data.length - 1; i >= 0; i--) {
+
+        const newLoc = document.getElementById("rep");
+        const newTitle = document.getElementById("reps");
+        // const posts = document.createElement("div");
+        // posts.classList.add("posts");
+        newTitle.textContent = data[1].post;
+        newLoc.textContent = data[1].location;
+    
+        
+    
+     }
+    
+
+});
+
 
 
 post_1.addEventListener('click', (e) => {
@@ -58,3 +85,4 @@ post_1.addEventListener('click', (e) => {
     
 });
 
+    
