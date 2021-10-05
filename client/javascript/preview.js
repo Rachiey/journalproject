@@ -94,6 +94,7 @@ post_1.addEventListener('click', (e) => {
         const newH2=document.createElement('h2');
         const newImg=document.createElement('img');
         const newMsg=document.createElement('p');
+
         newH1.textContent=data.all[0].post;
         newH2.textContent=data.all[0].location;
         newMsg.textContent=data.all[0].message;
@@ -146,11 +147,11 @@ post_1.addEventListener('click', (e) => {
             console.log(data.all[0].comments[i]);
             addPostComment.textContent=data.all[0].comments[i];
             sector.append(addPostComment);
-            sector.append(line);
+            // sector.append(line);
         }
 
         art.append(sector);
-        art.style.border="5px solid black";
+        sector.style.border="5px solid black";
       
     })
 
