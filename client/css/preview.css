@@ -107,7 +107,7 @@ article{
     flex-wrap: wrap;
 }
 
-article .selection {
+#addPosts .selection {
     width: calc(100vw/3);
     border: 5px solid whitesmoke;
     height: 35vh;
