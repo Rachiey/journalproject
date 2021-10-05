@@ -60,3 +60,41 @@ input.addEventListener('keyup', e => {
       }
     }
 });
+
+//katie messing with stuff
+const submitButton = document.getElementById('journalpost');
+const journalPostSubmission = document.getElementById('comments');
+const locationInput = document.getElementById('location')
+
+function submitPost(e) {
+  console.log(journalPostSubmission.value);
+  console.log(locationInput.value);
+
+  const data = {
+    location: locationInput.value,
+    post: journalPostSubmission.value,
+    gif: ""
+  }
+
+  //if the user doesn't write anything, do post anything
+  if(data.post === "") {
+    return;
+  }
+
+  //somehow handle what to do if the user doesn't want to add a gif
+  //actually I don't think this is needed because of how the constructor works?
+  
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(data)
+  }
+  fetch('http://localhost:3000/posts', options)
+    .then(console.log(data))
+    .catch(err => console.warn('Oops, something went wrong.'))
+}
+
+submitButton.addEventListener('click', e => {
+  e.preventDefault();
+  submitPost(e);
+})
+
