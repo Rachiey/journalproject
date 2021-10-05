@@ -79,7 +79,7 @@ section header{
     height: 5vh;
 }
 
-h1{
+.titles{
     width:  calc((0.6 * 100vw)/3);
     display: inline-block;
     text-align: center;
@@ -87,7 +87,7 @@ h1{
     margin-top: 5px;
 }
 
-h2{
+.locs{
     margin-left: 2px;
     display: inline-block;
     width:  calc((0.3 * 100vw)/3);
@@ -107,7 +107,7 @@ article{
     flex-wrap: wrap;
 }
 
-article section {
+article .selection {
     width: calc(100vw/3);
     border: 5px solid whitesmoke;
     height: 35vh;

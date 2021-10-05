@@ -37,6 +37,24 @@ post_2.addEventListener('click', (e) => {
     function setValues(data){
         console.log(data[1].post);
     // for (let i = data.length - 1; i >= 0; i--) {
+        const art=document.getElementById('addPosts');
+        const sector=document.createElement('section');
+        const newHeader=document.createElement('header');
+        const newH1=document.createElement('h1');
+        const newH2=document.createElement('h2');
+        const newImg=document.createElement('img');
+        newH1.textContent=data[0].post;
+        newH2.textContent=data[0].location;
+        newImg.src=data[0].gif;
+        newImg.className="gifs";
+        newHeader.className="post";
+        newH1.className="titles";
+        newH2.className="locs";
+        newHeader.append(newH2);
+        newHeader.append(newH1);
+        sector.append(newHeader);
+        sector.append(newImg);
+        art.append(sector);
 
         const newLoc = document.getElementById("rep");
         const newTitle = document.getElementById("reps");
