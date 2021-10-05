@@ -83,7 +83,7 @@ header{
     width:  calc((0.6 * 100vw)/3);
     display: inline-block;
     text-align: center;
-    font-size: x-large;
+    font-size: large;
     margin-top: 5px;
 }
 

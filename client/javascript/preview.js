@@ -111,7 +111,7 @@ post_1.addEventListener('click', (e) => {
         sector.append(newHeader);
         sector.append(newImg);
         sector.append(newMsg);
-        art.append(sector);
+        // art.append(sector);
 
         art.style.width="50vw";
         art.style.marginLeft="25vw";
@@ -128,7 +128,7 @@ post_1.addEventListener('click', (e) => {
         const postLable=document.createElement('label');
         const postComment=document.createElement('textarea');
         // postComment.type="textMessage";
-        postComment.cols="60";
+        postComment.cols="55";
         postComment.rows="2";
         postComment.textContent="Comments..";
         postInput.type="submit";
@@ -136,8 +136,20 @@ post_1.addEventListener('click', (e) => {
         postForm.append(postComment);
         // newPost.append(postForm);
         postForm.append(postInput);
-        art.append(postForm);
+        sector.append(postForm);
 
+        // art.style.border="5px solid black";
+        console.log(data.all[0].comments.length);
+        for(let i = data.all[0].comments.length - 1; i >= 0; i--){
+            const addPostComment=document.createElement('p');
+            const line=document.createElement('br');
+            console.log(data.all[0].comments[i]);
+            addPostComment.textContent=data.all[0].comments[i];
+            sector.append(addPostComment);
+            sector.append(line);
+        }
+
+        art.append(sector);
         art.style.border="5px solid black";
       
     })
