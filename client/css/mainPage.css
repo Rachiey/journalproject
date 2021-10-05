@@ -71,6 +71,14 @@ footer {
     height: 60px;
 }
 
+#charCounterPost {
+  text-align: center;
+  margin-left: 330px;
+  padding: 3px;
+};
+
+
+
 /* .wrapper {
     padding: 20px 28px;
     margin: 0;
