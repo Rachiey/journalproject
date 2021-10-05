@@ -3,7 +3,7 @@
         "id": 1,
         "location": "France",
         "post": "I had a really nice holiday!",
-        "gif": "https://media4.giphy.com/media/9A3t72abirdtyull0m/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g",
+        "gif": "https://media1.giphy.com/media/Btn42lfKKrOzS/giphy-downsized.gif?cid=77234f62x3vl0atyu3bxe8lpjfkmvlmpwcccb4otluzyftw5&rid=giphy-downsized.gif&ct=g",
         "message":"A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational",
         "comments": ["great","well done","working"],
         "reactions": {"smile": 2, "laugh": 0, "love": 3}
@@ -12,7 +12,7 @@
         "id": 2,
         "location": "London",
         "post": "The sights were great!",
-        "gif": "https://media4.giphy.com/media/9A3t72abirdtyull0m/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g",
+        "gif": "https://media3.giphy.com/media/9F2VWRiJypeBq/giphy.gif?cid=77234f62e5wzz9gac4a9fcnw6mcqi7t9i51c57ni4fc9resf&rid=giphy.gif&ct=g",
         "message":"A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational",
         "comments": ["great","well done","working"],
         "reactions": {"smile": 4, "laugh": 1, "love": 5}
@@ -21,7 +21,34 @@
         "id": 3,
         "location": "Germany",
         "post": "The food here was delicious!",
-        "gif": "",
+        "gif": "https://media4.giphy.com/media/8F3bK4aq1tCo0TLkf7/giphy.gif?cid=77234f627se5msjwhx96b5h43xh1ikm2hqo0fu06iaoruky8&rid=giphy.gif&ct=g",
+        "message":"A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational",
+        "comments": ["great","well done","working"],
+        "reactions": {"smile": 6, "laugh": 3, "love": 4}
+    },
+    {
+        "id": 4,
+        "location": "US",
+        "post": "I had a really nice holiday!",
+        "gif": "https://media4.giphy.com/media/9A3t72abirdtyull0m/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g",
+        "message":"A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational",
+        "comments": ["great","well done","working"],
+        "reactions": {"smile": 2, "laugh": 0, "love": 3}
+    },
+    {
+        "id": 5,
+        "location": "Italy",
+        "post": "The sights were great!",
+        "gif": "https://media4.giphy.com/media/9A3t72abirdtyull0m/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g",
+        "message":"A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational",
+        "comments": ["great","well done","working"],
+        "reactions": {"smile": 4, "laugh": 1, "love": 5}
+    },
+    {
+        "id": 6,
+        "location": "Norway",
+        "post": "The food here was delicious!",
+        "gif": "https://media4.giphy.com/media/8F3bK4aq1tCo0TLkf7/giphy.gif?cid=77234f627se5msjwhx96b5h43xh1ikm2hqo0fu06iaoruky8&rid=giphy.gif&ct=g",
         "message":"A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational",
         "comments": ["great","well done","working"],
         "reactions": {"smile": 6, "laugh": 3, "love": 4}

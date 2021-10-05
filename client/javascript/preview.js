@@ -36,7 +36,7 @@ post_2.addEventListener('click', (e) => {
 
     function setValues(data){
         // console.log(data[1].post);
-    // for (let i = data.length - 1; i >= 0; i--) {
+    for (let i = data.length - 1; i >= 0; i--) {
         const art=document.getElementById('addPosts');
         const sector=document.createElement('section');
         const newHeader=document.createElement('header');
@@ -44,10 +44,10 @@ post_2.addEventListener('click', (e) => {
         const newH2=document.createElement('h2');
         const newImg=document.createElement('img');
         const newMsg=document.createElement('p');
-        newH1.textContent=data[0].post;
-        newH2.textContent=data[0].location;
-        newMsg.textContent=data[0].message;
-        newImg.src=data[0].gif;
+        newH1.textContent=data[i].post;
+        newH2.textContent=data[i].location;
+        newMsg.textContent=data[i].message;
+        newImg.src=data[i].gif;
 
         newImg.className="gifs";
         newHeader.className="heads";
@@ -63,18 +63,18 @@ post_2.addEventListener('click', (e) => {
         sector.append(newMsg);
         art.append(sector);
 
-        const newLoc = document.getElementById("rep");
-        const newTitle = document.getElementById("reps");
-        // const posts = document.createElement("div");
-        // posts.classList.add("posts");
-        newTitle.textContent = data[1].post;
-        newLoc.textContent = data[1].location;
+        // const newLoc = document.getElementById("rep");
+        // const newTitle = document.getElementById("reps");
+        // // const posts = document.createElement("div");
+        // // posts.classList.add("posts");
+        // newTitle.textContent = data[1].post;
+        // newLoc.textContent = data[1].location;
     
         
     
      }
     
-
+    }
 });
 
 
