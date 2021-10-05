@@ -120,9 +120,25 @@ post_1.addEventListener('click', (e) => {
         newImg.style.width="200px";
         newImg.style.height="200px";
         newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
-        art.style.border="5px solid black";
+        // art.style.border="5px solid black";
         // art.style.backgroundColor="blue";
 
+        const postForm=document.createElement('form');
+        const postInput=document.createElement('input');
+        const postLable=document.createElement('label');
+        const postComment=document.createElement('textarea');
+        // postComment.type="textMessage";
+        postComment.cols="60";
+        postComment.rows="2";
+        postComment.textContent="Comments..";
+        postInput.type="submit";
+        postForm.append(postLable);
+        postForm.append(postComment);
+        // newPost.append(postForm);
+        postForm.append(postInput);
+        art.append(postForm);
+
+        art.style.border="5px solid black";
       
     })
 
