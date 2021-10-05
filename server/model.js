@@ -18,8 +18,9 @@ class Post {
 
     static addNewPost(data) {
         const id = postData.length + 1;
-        const newPost = new Post({id: id, ...data});
-        //console.log(newPost);
+        const newPost = new Post({
+            id: id, ...data
+        });
         postData.push(newPost);
         return Post.all;
     }

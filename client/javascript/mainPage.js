@@ -92,14 +92,18 @@ function submitPost(e) {
   
   const options = {
     method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(data)
   }
   fetch('http://localhost:3000/posts', options)
-    .then(console.log(data))
+    .then(console.log(options))
     .catch(err => console.warn('Oops, something went wrong.'))
 }
 
 submitButton.addEventListener('click', e => {
+  e.preventDefault(); //get rid of this!
   submitPost(e);
 })
 
