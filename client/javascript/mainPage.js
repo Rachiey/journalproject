@@ -103,7 +103,6 @@ function submitPost(e) {
 }
 
 submitButton.addEventListener('click', e => {
-  e.preventDefault(); //get rid of this!
   submitPost(e);
 })
 
