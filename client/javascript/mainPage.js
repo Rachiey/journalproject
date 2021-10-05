@@ -2,6 +2,9 @@
 let APIKEY = "EmK1vBdg1ZIGje2nKx614fyuVDlGOxjE";
 // you will need to get your own API KEY
 // https://developers.giphy.com/dashboard/
+
+
+
 document.addEventListener("DOMContentLoaded", init);
 function init() {
   document.getElementById("btnSearch").addEventListener("click", ev => {
@@ -73,8 +76,10 @@ function submitPost(e) {
   const data = {
     location: locationInput.value,
     post: journalPostSubmission.value,
-    gif: ""
+    gif: `${img.src}` //figure out how to access img.src
   }
+
+  console.log(data.gif);
 
   //if the user doesn't write anything, do post anything
   if(data.post === "") {
