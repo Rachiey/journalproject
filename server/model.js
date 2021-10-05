@@ -1,4 +1,5 @@
 const postData = require("../posts.json");
+const { post } = require("./app");
 
 class Post {
     constructor(data) {
