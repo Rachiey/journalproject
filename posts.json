@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "title": "South of France",
         "location": "France",
         "post": "I had a really nice holiday!",
         "gif": "",
@@ -9,6 +10,7 @@
     },
     {
         "id": 2,
+        "title": "Sightseeing in London",
         "location": "London",
         "post": "The sights were great!",
         "gif": "",
@@ -17,6 +19,7 @@
     },
     {
         "id": 3,
+        "title": "German Food",
         "location": "Germany",
         "post": "The food here was delicious!",
         "gif": "",

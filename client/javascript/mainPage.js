@@ -65,21 +65,22 @@ input.addEventListener('keyup', e => {
 });
 
 //katie messing with stuff
+//submitting the post
 const submitButton = document.getElementById('journalpost');
 const journalPostSubmission = document.getElementById('comments');
 const locationInput = document.getElementById('location')
+const titleInput = document.getElementById('title');
 
 function submitPost(e) {
   console.log(journalPostSubmission.value);
   console.log(locationInput.value);
 
   const data = {
+    title: titleInput.value,
     location: locationInput.value,
     post: journalPostSubmission.value,
-    gif: `${img.src}` //figure out how to access img.src
+    //gif: `${img.src}` //figure out how to access img.src
   }
-
-  console.log(data.gif);
 
   //if the user doesn't write anything, do post anything
   if(data.post === "") {
