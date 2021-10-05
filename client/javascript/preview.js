@@ -43,18 +43,24 @@ post_2.addEventListener('click', (e) => {
         const newH1=document.createElement('h1');
         const newH2=document.createElement('h2');
         const newImg=document.createElement('img');
+        const newMsg=document.createElement('p');
         newH1.textContent=data[0].post;
         newH2.textContent=data[0].location;
+        newMsg.textContent=data[0].message;
         newImg.src=data[0].gif;
+
         newImg.className="gifs";
-        newHeader.className="post";
+        newHeader.className="heads";
         newH1.className="titles";
         newH2.className="locs";
         sector.className="selection";
+        newMsg.className="p";
+
         newHeader.append(newH2);
         newHeader.append(newH1);
         sector.append(newHeader);
         sector.append(newImg);
+        sector.append(newMsg);
         art.append(sector);
 
         const newLoc = document.getElementById("rep");

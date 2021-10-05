@@ -75,7 +75,7 @@ header{
     height: var(--headerheight);
 }
 
-.selection .post{
+.selection .heads{
     height: 5vh;
 }
 
@@ -133,7 +133,7 @@ footer{
 
 }
 
-p{
+.p{
     margin-top: 5px;
 }
 
