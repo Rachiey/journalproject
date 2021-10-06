@@ -162,6 +162,7 @@ function getPostById(idNum){
         const postInput=document.createElement('input');
         const postLable=document.createElement('label');
         const postComment=document.createElement('textarea');
+        
         // postComment.type="textMessage";
         postComment.cols="55";
         postComment.rows="2";
@@ -174,15 +175,42 @@ function getPostById(idNum){
         sector.append(postForm);
 
         // art.style.border="5px solid black";
-        console.log(data.all[0].comments.length);
-        for(let i = data.all[0].comments.length - 1; i >= 0; i--){
+        console.log(data.all[idNum].comments.length);
+        for(let i = data.all[idNum].comments.length - 1; i >= 0; i--){
             const addPostComment=document.createElement('p');
-            const line=document.createElement('br');
-            console.log(data.all[0].comments[i]);
+            
+            console.log(data.all[idNum].comments[i]);
             addPostComment.textContent=data.all[0].comments[i];
             sector.append(addPostComment);
             // sector.append(line);
         }
+
+        const line=document.createElement('br');
+        const addReactionsList=document.createElement('div');
+        sector.append(line);
+        console.log(data.all[idNum].reactions.smile);
+      
+        const addPostReactionSmile=document.createElement('p');
+        const addPostReactionLove=document.createElement('p');
+        const addPostReactionLaugh=document.createElement('p');
+        console.log(data.all[idNum].reactions);
+        addPostReactionSmile.textContent=`Smile : ${data.all[idNum].reactions.smile}`;
+        addPostReactionLove.textContent=`Love :  ${data.all[idNum].reactions.love}`;
+        addPostReactionLaugh.textContent=`Laugh : ${data.all[idNum].reactions.laugh}`;
+
+        addPostReactionSmile.style.display="inline-block";
+        addPostReactionLove.style.display="inline-block";
+        addPostReactionLaugh.style.display="inline-block";
+
+        addPostReactionSmile.style.width="15vw";
+        addPostReactionLove.style.width="15vw";
+
+        addReactionsList.append(addPostReactionSmile);
+        addReactionsList.append(addPostReactionLove);
+        addReactionsList.append(addPostReactionLaugh);
+        sector.append(addReactionsList);
+        // sector.append(line);
+        
 
         art.append(sector);
         sector.style.border="5px solid black";
