@@ -1,3 +1,5 @@
+const counterPost = document.getElementById("charCounterPost");
+
 //for the GIF feature 
 let APIKEY = "EmK1vBdg1ZIGje2nKx614fyuVDlGOxjE";
 // you will need to get your own API KEY
@@ -25,28 +27,22 @@ function init() {
         .catch(err => {
             console.error(err);
         });
-}
-
-const handleGifSearch = event => {
-    if (event.key === 'Enter') {
-        fetchGiphy();
-    }
-};
-
-const addSelectedGifToPost = event => {
-    event.preventDefault();
-
-    const postContent = document.querySelector('.newPost');
-    const gifSearchModal = document.querySelector('.giphy-search');
-    const gifImage = document.querySelector('.giphy-search__results img');
-
-    if (gifImage) {
-        gifImage.style.height = '200px';
-        gifImage.style.objectFit = 'contain';
-        postContent.appendChild(gifImage);
-        gifSearchModal.style.visibility = 'hidden';
-    }
 });
+
+//Character Counter 
+comments.addEventListener("input", (e) => {
+  const target = e.target;
+  const maxLength = target.getAttribute("maxlength");
+  let currentLength = target.value.length;
+  counterPost.textContent = `${maxLength - currentLength} characters remaining`;
+// Button is enabled since textarea has text:
+addPostButton.disabled = false;
+});
+
+
+
+
+
 
 //katie messing with stuff
 const submitButton = document.getElementById('journalpost');
