@@ -14,53 +14,37 @@ function init() {
     url = url.concat(str);
     console.log(url);
     fetch(url)
-      .then(response => response.json())
-      .then(content => {
-        //  data, pagination, meta
-        console.log(content.data);
-        console.log("META", content.meta);
-        let fig = document.createElement("figure");
-        let img = document.createElement("img");
-        let fc = document.createElement("figcaption");
-        img.src = content.data[0].images.downsized.url;
-        img.alt = content.data[0].title;
-        fc.textContent = content.data[0].title;
-        fig.appendChild(img);
-        fig.appendChild(fc);
-        let out = document.querySelector(".out");
-        out.insertAdjacentElement("afterbegin", fig);
-        document.querySelector("#search").value = "";
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  });
+        .then(resp => resp.json())
+        .then(json => {
+            let img = document.createElement('img');
+            img.src = json.data[0].images.fixed_height_downsampled.url;
+            img.style.cursor = 'pointer';
+            results.appendChild(img);
+            document.querySelector('#gif-search-bar').value = '';
+        })
+        .catch(err => {
+            console.error(err);
+        });
 }
 
+const handleGifSearch = event => {
+    if (event.key === 'Enter') {
+        fetchGiphy();
+    }
+};
 
-//hashtag feature 
-let input, hashtagArray, container, t;
+const addSelectedGifToPost = event => {
+    event.preventDefault();
 
-input = document.querySelector('#hashtags');
-container = document.querySelector('.tag-container');
-hashtagArray = [];
+    const postContent = document.querySelector('.newPost');
+    const gifSearchModal = document.querySelector('.giphy-search');
+    const gifImage = document.querySelector('.giphy-search__results img');
 
-input.addEventListener('keyup', e => {
-    if (e.which == 13 && input.value.length > 0) {
-      var text = document.createTextNode(input.value);
-      var p = document.createElement('p');
-      container.appendChild(p);
-      p.appendChild(text);
-      p.classList.add('tag');
-      input.value = '';
-      
-//       let deleteTags = document.querySelectorAll('.tag');
-      
-      for(let i = 0; i < deleteTags.length; i++) {
-        deleteTags[i].addEventListener('click', () => {
-          container.removeChild(deleteTags[i]);
-        });
-      }
+    if (gifImage) {
+        gifImage.style.height = '200px';
+        gifImage.style.objectFit = 'contain';
+        postContent.appendChild(gifImage);
+        gifSearchModal.style.visibility = 'hidden';
     }
 });
 
