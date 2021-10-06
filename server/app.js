@@ -39,6 +39,25 @@ app.get("/posts/comments/:id", (req, res) => {
     }   
 });
 
+//gets all reactions for a specific post
+app.get("/posts/reactions/:id", (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+
+        //handles invalid id number
+        if(id > Post.all.length) {
+            throw new Error("Reactions not found");
+        }
+
+        const post = Post.getPost(id);
+        res.send(post.reactions);
+    }
+    catch(err) {
+        res.statusCode = 404;
+        res.send(err.message)
+    }   
+});
+
 
 //POST
 //adds new post
@@ -71,6 +90,24 @@ app.post("/posts/comments/:id", (req, res) => {
 })
 
 //UPDATE
-//adds reaction
+//adds new reaction
+app.put("/posts/reactions/:id", (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const newReaction = req.body.reaction;
+
+        //makes sure the post exists (so the user can actually react to it)
+        if(id > Post.all.length) {
+            throw new Error("Post not found");
+        }
+
+        Post.newReaction(id, newReaction);
+        res.send("Updated post");
+    }
+    catch(err) {
+        res.status = 404;
+        res.send(err.message);
+    }
+})
 
 module.exports = app;
