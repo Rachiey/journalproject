@@ -30,7 +30,7 @@ function init() {
 });
 
 //Character Counter 
-comments.addEventListener("input", (e) => {
+newPost.addEventListener("input", (e) => {
   const target = e.target;
   const maxLength = target.getAttribute("maxlength");
   let currentLength = target.value.length;
@@ -82,4 +82,3 @@ submitButton.addEventListener('click', e => {
   e.preventDefault();
   submitPost(e);
 })
-
