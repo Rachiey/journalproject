@@ -8,37 +8,13 @@ const postReactionSimleInput=document.createElement('button');
 const postReactionLoveInput=document.createElement('button');
 const postReactionLaughInput=document.createElement('button');
 const postForm=document.createElement('form');
+
 const submitButton=document.createElement('button');
+
 const postLable=document.createElement('label');
 const postComment=document.createElement('textarea');
 
 const checkIds=[]
-
-// const commentBox = "....";
-// function submitComment(e) {
-// 	const data = {
-// 		comment: postComment.value;
-// 	};
-	
-// 	//if the user doesn't write anything, don't post anything
-// 	if(data.comment === "") {
-// 		return
-// 	}
-// 	const options = {
-// 		method: "POST",
-// 		headers: {
-// 			"Content-Type": "application/json"
-// 		},
-// 		body: JSON.stringify(data)
-// 	}
-// 	fetch('http://localhost:3000/post/comments/(need id number), options)
-// 		.then(console.log("New comment added")
-// 		.catch(err => console.warn("Oops, something went wrong."))
-// };
-
-// submitCommentButton.addEventListener("click", e => {
-// 	submitComment(e);
-// });
 
 
 // const q="travel";
@@ -200,6 +176,9 @@ function getPostById(idNum){
         postComment.placeholder="Comments..";
         submitButton .type="submit";
         submitButton.textContent="Comment";
+
+        postComment.textContent="Comments..";
+        
         postForm.append(postLable);
         postForm.append(postComment);
         // newPost.append(postForm);
@@ -258,6 +237,7 @@ function getPostById(idNum){
         sector.append(addReactionsList);
         // sector.append(line);
 
+
         art.append(sector);
         sector.style.border="5px solid black";
       
@@ -291,6 +271,9 @@ function getPostById(idNum){
         };
     });
 }
+
+
+
 
 
 

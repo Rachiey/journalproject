@@ -5,7 +5,9 @@ let APIKEY = "EmK1vBdg1ZIGje2nKx614fyuVDlGOxjE";
 // you will need to get your own API KEY
 // https://developers.giphy.com/dashboard/
 
-
+let fig = document.createElement("figure");
+let img = document.createElement("img");
+let fc = document.createElement("figcaption");
 
 document.addEventListener("DOMContentLoaded", init);
 function init() {
@@ -21,16 +23,13 @@ function init() {
         //  data, pagination, meta
         console.log(content.data);
         console.log("META", content.meta);
-        let fig = document.createElement("figure");
-        let img = document.createElement("img");
-        let fc = document.createElement("figcaption");
         img.src = content.data[0].images.downsized.url;
         console.log(img.src);
         img.alt = content.data[0].title;
         fc.textContent = content.data[0].title;
         fig.appendChild(img);
         fig.appendChild(fc);
-        let out = document.querySelector(".out");
+        let out = document.querySelector("#out");
         out.insertAdjacentElement("afterbegin", fig);
         document.querySelector("#search").value = "";
       })
@@ -66,7 +65,7 @@ function submitPost(e) {
     location: locationInput.value,
     category: categorySelect.value,
     post: journalPostSubmission.value,
-    //gif: `${img.src}` //figure out how to access img.src
+    gif: img.src,
   }
 
   //if the user doesn't write anything, don't post anything
@@ -86,7 +85,7 @@ function submitPost(e) {
     .catch(err => console.warn('Oops, something went wrong.'))
   };
 
-
 submitButton.addEventListener('click', e => {
+  e.preventDefault();
   submitPost(e);
 });

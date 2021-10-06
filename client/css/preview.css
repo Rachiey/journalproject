@@ -13,7 +13,9 @@
 }
 
 header .topnav {
-    height: var(--headerheight);
+
+    height: var(--headerheight))
+
 }
 
 .topnav {
