@@ -202,20 +202,20 @@ function getPostById(idNum){
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
 
-        postReactionSimleInput.textContent=parseInt(data.all[idNum].reactions.smile);
-        postReactionLoveInput.textContent=parseInt(data.all[idNum].reactions.love);
-        postReactionLaughInput.textContent=parseInt(data.all[idNum].reactions.laugh);
+        postReactionSimleInput.textContent=data.all[idNum].reactions.smile;
+        postReactionLoveInput.textContent=data.all[idNum].reactions.love;
+        postReactionLaughInput.textContent=data.all[idNum].reactions.laugh;
         
         console.log(data.all[idNum].reactions);
-        addPostReactionSmile.textContent=`Smile : `;
+        addPostReactionSmile.innerHTML=`&#128522;  `;
         addReactionsList.append(addPostReactionSmile);
         addReactionsList.append(postReactionSimleInput);
 
-        addPostReactionLove.textContent=`Love : `;
+        addPostReactionLove.innerHTML=`&#128525;  `;
         addReactionsList.append(addPostReactionLove);
         addReactionsList.append(postReactionLoveInput);
 
-        addPostReactionLaugh.textContent=`Laugh : `;
+        addPostReactionLaugh.innerHTML=`&#128514;  `;
         addReactionsList.append(addPostReactionLaugh);
         addReactionsList.append(postReactionLaughInput);
 
