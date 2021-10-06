@@ -15,7 +15,13 @@ const submitButton=document.createElement('button');
 const postLable=document.createElement('label');
 const postComment=document.createElement('textarea');
 
-const checkIds=[]
+const checkIds=[];
+const selectPostID=[];
+
+const entertainment="entertainment";
+const food="Food and Drink";
+const sightseeing="Sightseeing";
+const posts="posts";
 
 
 
@@ -47,7 +53,7 @@ const checkIds=[]
 addPosts.addEventListener('click', (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:3000/posts')
+    fetch(`http://localhost:3000/${posts}`)
     .then(obj => obj.json())
     .then(data => setValues(data.all))
 
@@ -74,6 +80,7 @@ addPosts.addEventListener('click', (e) => {
             newMsg.className="p";
             sector.id=`${i}`;
             checkIds.push(sector.id);
+            selectPostID.push(data[i].id);
             console.log(checkIds);
 
             newHeader.append(newH2);
@@ -93,7 +100,7 @@ addPosts.addEventListener('click', (e) => {
             getIdNum.addEventListener('click', (e) => {
                 e.preventDefault();
                 classOverview.className="hideClass";
-                getPostById(checkIds[i]);
+                getPostById(checkIds[i],selectPostID[i]);
         })
         }
 
@@ -130,10 +137,10 @@ console.log(checkIds);
 // });
 
 
-function getPostById(idNum){
+function getPostById(idNum,numberOfId){
     console.log(typeof(idNum));    
     console.log(idNum);
-    fetch('http://localhost:3000/posts')
+    fetch(`http://localhost:3000/${posts}`)
     .then(obj => obj.json())
     .then(data => {
         const CommentsArr=[]; 
@@ -291,10 +298,10 @@ function getPostById(idNum){
                     },
                     body: JSON.stringify(data)
                 }
-                console.log(`http://localhost:3000/posts/comments/${idNum}`);
-                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
+                console.log(`http://localhost:3000/posts/comments/${numberOfId}`);
+                fetch(`http://localhost:3000/posts/comments/${numberOfId}`, options)
                     .then(console.log("New comment added"))
-                    .then(addTheComments(idNum,postComment.value))
+                    .then(addTheComments(parseInt(idNum),postComment.value))
                     .then(postComment.value="")
                     .catch(err => console.warn("Oops, something went wrong."))
             };
