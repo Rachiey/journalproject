@@ -40,6 +40,13 @@ class Post {
         const targetPost = Post.getPost(id);
         targetPost.comments.push(comment);
     }
+
+
+    //add a new reaction
+    static addNewReaction(id, targetReaction) {
+        const targetPost = Post.getPost(id);
+        targetPost.reactions[targetReaction]++; 
+    }
 };
 
 module.exports = Post;
