@@ -3,6 +3,10 @@ const post_1=document.getElementById("post_1");
 const post_2=document.getElementById("post_2");
 const addPosts=document.getElementById("addPosts");
 const classOverview=document.getElementById("classOverview");
+const postReactionForm=document.createElement('form');
+const postReactionSimleInput=document.createElement('button');
+const postReactionLoveInput=document.createElement('button');
+const postReactionLaughInput=document.createElement('button');
 
 const q="travel";
 const limit= 1;
@@ -193,18 +197,14 @@ function getPostById(idNum){
         const addPostReactionSmile=document.createElement('p');
         const addPostReactionLove=document.createElement('p');
         const addPostReactionLaugh=document.createElement('p');
-        const postReactionForm=document.createElement('form');
-        const postReactionSimleInput=document.createElement('button');
-        const postReactionLoveInput=document.createElement('button');
-        const postReactionLaughInput=document.createElement('button');
 
         postReactionSimleInput.type="submit";
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
 
-        postReactionSimleInput.textContent=data.all[idNum].reactions.smile;
-        postReactionLoveInput.textContent=data.all[idNum].reactions.love;
-        postReactionLaughInput.textContent=data.all[idNum].reactions.laugh;
+        postReactionSimleInput.textContent=parseInt(data.all[idNum].reactions.smile);
+        postReactionLoveInput.textContent=parseInt(data.all[idNum].reactions.love);
+        postReactionLaughInput.textContent=parseInt(data.all[idNum].reactions.laugh);
         
         console.log(data.all[idNum].reactions);
         addPostReactionSmile.textContent=`Smile : `;
@@ -227,8 +227,6 @@ function getPostById(idNum){
         postReactionSimleInput.style.marginRight="9vw";
         postReactionLoveInput.style.marginRight="9vw";
 
-
-        
         sector.append(addReactionsList);
         // sector.append(line);
         
@@ -238,6 +236,21 @@ function getPostById(idNum){
       
     })
 }
+
+postReactionSimleInput.addEventListener('click', (e) => {
+    e.preventDefault();
+    postReactionSimleInput.textContent =   1 + parseInt(postReactionSimleInput.textContent);
+})
+
+postReactionLoveInput.addEventListener('click', (e) => {
+    e.preventDefault();
+    postReactionLoveInput.textContent =   1 + parseInt(postReactionLoveInput.textContent);
+})
+
+postReactionLaughInput.addEventListener('click', (e) => {
+    e.preventDefault();
+    postReactionLaughInput.textContent =   1 + parseInt(postReactionLaughInput.textContent);
+})
 
 
 // post_1.addEventListener('click', (e) => {
