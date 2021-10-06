@@ -27,7 +27,7 @@
       <form> 
         <div class="filter-group">
             <label>Please select a category: </label>
-            <select class="form-control">
+            <select class="form-control" id="category" name="category">
                 <option>Entertainment</option>
                 <option>Food and Drink</option>
                 <option>Sightseeing</option>
@@ -42,7 +42,7 @@
         <input type="text" id="location" name="location">
 
         <div>
-        <textarea name="comments" id="newPost" maxlength="500"></textarea>
+        <textarea name="comments" id="comments" maxlength="500"></textarea>
         </div>
         <input type ="submit" id = "journalsubmit" value ="Submit Post">
         <div id="charCounterPost">500 characters remaining</div>
