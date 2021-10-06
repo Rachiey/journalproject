@@ -6,6 +6,7 @@ class Post {
         this.id = data.id;
         this.title = data.title;
         this.location = data.location;
+        this.category = data.category;
         this.post = data.post;
         this.gif = data.gif;
         this.comments = [];

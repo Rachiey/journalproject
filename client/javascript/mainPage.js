@@ -55,17 +55,16 @@ comments.addEventListener("input", (e) => {
 //submitting the post
 const submitButton = document.getElementById('journalsubmit');
 const journalPostSubmission = document.getElementById('comments');
-const locationInput = document.getElementById('location')
+const locationInput = document.getElementById('location');
 const titleInput = document.getElementById('title');
+const categorySelect = document.getElementById('category');
 
 
 function submitPost(e) {
-  console.log(journalPostSubmission.value);
-  console.log(locationInput.value);
-
   const data = {
     title: titleInput.value,
     location: locationInput.value,
+    category: categorySelect.value,
     post: journalPostSubmission.value,
     //gif: `${img.src}` //figure out how to access img.src
   }
@@ -83,7 +82,7 @@ function submitPost(e) {
     body: JSON.stringify(data)
   }
   fetch('http://localhost:3000/posts', options)
-    .then(console.log(options))
+    .then(console.log("New post added"))
     .catch(err => console.warn('Oops, something went wrong.'))
   };
 
