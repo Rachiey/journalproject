@@ -3,14 +3,23 @@ const post_1=document.getElementById("post_1");
 const post_2=document.getElementById("post_2");
 const addPosts=document.getElementById("addPosts");
 const classOverview=document.getElementById("classOverview");
+const postReactionForm=document.createElement('form');
+const postReactionSimleInput=document.createElement('button');
+const postReactionLoveInput=document.createElement('button');
+const postReactionLaughInput=document.createElement('button');
+const postForm=document.createElement('form');
+const postInput=document.createElement('button');
+const postLable=document.createElement('label');
+const postComment=document.createElement('textarea');
 
-const q="travel";
-const limit= 1;
-const key="xr36JpsP033KfmDe2JLnczqLinBF57cf";
 const checkIds=[]
 
+// const q="travel";
+// const limit= 1;
+// const key="xr36JpsP033KfmDe2JLnczqLinBF57cf";
 
-let url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${q}&limit=${limit}&offset=0&rating=g&lang=en`;
+
+// let url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${q}&limit=${limit}&offset=0&rating=g&lang=en`;
 
 // console.log(url);
 // fetch(url)
@@ -157,16 +166,13 @@ function getPostById(idNum){
         newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
         // art.style.border="5px solid black";
         // art.style.backgroundColor="blue";
-
-        const postForm=document.createElement('form');
-        const postInput=document.createElement('input');
-        const postLable=document.createElement('label');
-        const postComment=document.createElement('textarea');
+        
         // postComment.type="textMessage";
         postComment.cols="55";
         postComment.rows="2";
         postComment.textContent="Comments..";
         postInput.type="submit";
+        postInput.textContent="Comment";
         postForm.append(postLable);
         postForm.append(postComment);
         // newPost.append(postForm);
@@ -174,21 +180,83 @@ function getPostById(idNum){
         sector.append(postForm);
 
         // art.style.border="5px solid black";
-        console.log(data.all[0].comments.length);
-        for(let i = data.all[0].comments.length - 1; i >= 0; i--){
+        console.log(data.all[idNum].comments.length);
+        for(let i = data.all[idNum].comments.length - 1; i >= 0; i--){
             const addPostComment=document.createElement('p');
-            const line=document.createElement('br');
-            console.log(data.all[0].comments[i]);
+            
+            console.log(data.all[idNum].comments[i]);
             addPostComment.textContent=data.all[0].comments[i];
             sector.append(addPostComment);
             // sector.append(line);
         }
+
+        const line=document.createElement('br');
+        const addReactionsList=document.createElement('div');
+        sector.append(line);
+        console.log(data.all[idNum].reactions.smile);
+      
+        const addPostReactionSmile=document.createElement('p');
+        const addPostReactionLove=document.createElement('p');
+        const addPostReactionLaugh=document.createElement('p');
+
+        postReactionSimleInput.type="submit";
+        postReactionLoveInput.type="submit";
+        postReactionLaughInput.type="submit";
+
+        postReactionSimleInput.textContent=data.all[idNum].reactions.smile;
+        postReactionLoveInput.textContent=data.all[idNum].reactions.love;
+        postReactionLaughInput.textContent=data.all[idNum].reactions.laugh;
+        
+        console.log(data.all[idNum].reactions);
+        addPostReactionSmile.innerHTML=`&#128522;  `;
+        addReactionsList.append(addPostReactionSmile);
+        addReactionsList.append(postReactionSimleInput);
+
+        addPostReactionLove.innerHTML=`&#128525;  `;
+        addReactionsList.append(addPostReactionLove);
+        addReactionsList.append(postReactionLoveInput);
+
+        addPostReactionLaugh.innerHTML=`&#128514;  `;
+        addReactionsList.append(addPostReactionLaugh);
+        addReactionsList.append(postReactionLaughInput);
+
+        addPostReactionSmile.style.display="inline-block";
+        addPostReactionLove.style.display="inline-block";
+        addPostReactionLaugh.style.display="inline-block";
+
+        addPostReactionSmile.style.marginLeft="6vw";
+        postReactionSimleInput.style.marginRight="9vw";
+        postReactionLoveInput.style.marginRight="9vw";
+
+        sector.append(addReactionsList);
+        // sector.append(line);
+        
 
         art.append(sector);
         sector.style.border="5px solid black";
       
     })
 }
+
+postInput.addEventListener('click', (e) => {
+    e.preventDefault();
+    postInput.style.backgroundColor="blue";
+})
+
+postReactionSimleInput.addEventListener('click', (e) => {
+    e.preventDefault();
+    postReactionSimleInput.textContent =   1 + parseInt(postReactionSimleInput.textContent);
+})
+
+postReactionLoveInput.addEventListener('click', (e) => {
+    e.preventDefault();
+    postReactionLoveInput.textContent =   1 + parseInt(postReactionLoveInput.textContent);
+})
+
+postReactionLaughInput.addEventListener('click', (e) => {
+    e.preventDefault();
+    postReactionLaughInput.textContent =   1 + parseInt(postReactionLaughInput.textContent);
+})
 
 
 // post_1.addEventListener('click', (e) => {
