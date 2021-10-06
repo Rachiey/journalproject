@@ -42,18 +42,18 @@ function init() {
 
 
 //Character Counter 
-newPost.addEventListener("input", (e) => {
+comments.addEventListener("input", (e) => {
   const target = e.target;
   const maxLength = target.getAttribute("maxlength");
   let currentLength = target.value.length;
   counterPost.textContent = `${maxLength - currentLength} characters remaining`;
 // Button is enabled since textarea has text:
-addPostButton.disabled = false;
+//addPostButton.disabled = false;
 });
 
 
 //submitting the post
-const submitButton = document.getElementById('journalpost');
+const submitButton = document.getElementById('journalsubmit');
 const journalPostSubmission = document.getElementById('comments');
 const locationInput = document.getElementById('location')
 const titleInput = document.getElementById('title');
@@ -66,7 +66,7 @@ function submitPost(e) {
     title: titleInput.value,
     location: locationInput.value,
     post: journalPostSubmission.value,
-    //gif: `${img.src}` //figure out how to access img.src
+    //gif: out.value,
   }
 
   //if the user doesn't write anything, don't post anything
@@ -85,7 +85,6 @@ function submitPost(e) {
     .then(console.log(options))
     .catch(err => console.warn('Oops, something went wrong.'))
   };
-
 
 submitButton.addEventListener('click', e => {
   submitPost(e);
