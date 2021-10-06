@@ -3,18 +3,20 @@ const post_1=document.getElementById("post_1");
 const post_2=document.getElementById("post_2");
 const addPosts=document.getElementById("addPosts");
 const classOverview=document.getElementById("classOverview");
+
 const postReactionForm=document.createElement('form');
 const postReactionSimleInput=document.createElement('button');
 const postReactionLoveInput=document.createElement('button');
 const postReactionLaughInput=document.createElement('button');
 const postForm=document.createElement('form');
-
+const art=document.getElementById('newPost');
+const sector=document.createElement('section');
 const submitButton=document.createElement('button');
-
 const postLable=document.createElement('label');
 const postComment=document.createElement('textarea');
 
 const checkIds=[]
+
 
 
 // const q="travel";
@@ -101,6 +103,8 @@ addPosts.addEventListener('click', (e) => {
 });
 
 
+
+
 // addPosts.addEventListener('click', (e) => {
 //     e.preventDefault();
 
@@ -132,9 +136,7 @@ function getPostById(idNum){
     fetch('http://localhost:3000/posts')
     .then(obj => obj.json())
     .then(data => {
-            
-        const art=document.getElementById('newPost');
-        const sector=document.createElement('section');
+        const CommentsArr=[]; 
         const newHeader=document.createElement('header');
         const newH1=document.createElement('h1');
         const newH2=document.createElement('h2');
@@ -167,10 +169,8 @@ function getPostById(idNum){
         newImg.style.width="200px";
         newImg.style.height="200px";
         newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
-        // art.style.border="5px solid black";
-        // art.style.backgroundColor="blue";
+
         
-        // postComment.type="textMessage";
         postComment.cols="55";
         postComment.rows="2";
         postComment.placeholder="Comments..";
@@ -183,16 +183,7 @@ function getPostById(idNum){
         postForm.append(submitButton);
         sector.append(postForm);
 
-        // art.style.border="5px solid black";
-        console.log(data.all[idNum].comments.length);
-        for(let i = data.all[idNum].comments.length - 1; i >= 0; i--){
-            const addPostComment=document.createElement('p');
-            
-            console.log(data.all[idNum].comments[i]);
-            addPostComment.textContent=data.all[0].comments[i];
-            sector.append(addPostComment);
-            // sector.append(line);
-        }
+
 
         const line=document.createElement('br');
         const addReactionsList=document.createElement('div');
@@ -233,47 +224,60 @@ function getPostById(idNum){
         postReactionLoveInput.style.marginRight="9vw";
 
         sector.append(addReactionsList);
-        // sector.append(line);
+        sector.append(line);
 
+
+        console.log(data.all[idNum].comments.length);
+        for(let i = 0; i < data.all[idNum].comments.length ; i++){
+            const addPostComment=document.createElement('p');           
+            // console.log(data.all[idNum].comments[i]);
+            addPostComment.textContent=data.all[idNum].comments[i];
+            sector.append(addPostComment);
+        }
+       
+
+        submitButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            submitButton.style.backgroundColor="blue";
+            submitComment(e);
+        
+            function submitComment(e) {
+                const data = {
+                    comment: postComment.value,
+                };
+                
+                //if the user doesn't write anything, don't post anything
+                if(data.comment === "") {
+                    return;
+                }
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }
+                console.log(`http://localhost:3000/posts/comments/${idNum}`);
+                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
+                    .then(console.log("New comment added"))
+                    .then(addTheComments(idNum,postComment.value))
+                    .catch(err => console.warn("Oops, something went wrong."))
+            };
+        });
 
         art.append(sector);
         sector.style.border="5px solid black";
       
     })
 
-    submitButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        submitButton.style.backgroundColor="blue";
-        submitComment(e);
-    
-        function submitComment(e) {
-            const data = {
-                comment: postComment.value,
-            };
-            
-            //if the user doesn't write anything, don't post anything
-            if(data.comment === "") {
-                return;
-            }
-            const options = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            }
-            console.log(`http://localhost:3000/posts/comments/${idNum}`);
-            fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
-                .then(console.log("New comment added"))
-                .catch(err => console.warn("Oops, something went wrong."))
-        };
-    });
 }
 
 
-
-
-
+function addTheComments(idNum,value){
+    const addNewComment=document.createElement('p');       
+    addNewComment.textContent=value;
+    sector.append(addNewComment);
+}
 
 postReactionSimleInput.addEventListener('click', (e) => {
     e.preventDefault();
