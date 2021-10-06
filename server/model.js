@@ -4,6 +4,7 @@ const { post } = require("./app");
 class Post {
     constructor(data) {
         this.id = data.id;
+        this.title = data.title
         this.location = data.location;
         this.post = data.post;
         this.gif = data.gif;
@@ -17,7 +18,9 @@ class Post {
 
     static addNewPost(data) {
         const id = postData.length + 1;
-        const newPost = new Post({id: id, ...data});
+        const newPost = new Post({
+            id: id, ...data
+        });
         postData.push(newPost);
         return Post.all;
     }

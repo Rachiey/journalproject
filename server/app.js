@@ -6,6 +6,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors());
+app.use(express.json());
 
 //GET
 //gets all posts
@@ -23,7 +24,8 @@ app.get("/posts/:id", (req, res) => {
 //POST
 //adds new post
 app.post("/posts", (req, res) => {
-    Post.addNewPost(req.body); 
+    Post.addNewPost(req.body);
+    console.log(req.body);
     res.statusCode = 201;
     res.send(Post.all);
 })
