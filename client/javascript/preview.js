@@ -185,53 +185,7 @@ function getPostById(idNum){
         postForm.append(submitButton);
         sector.append(postForm);
 
-        // art.style.border="5px solid black";
-        console.log(data.all[idNum].comments.length);
-       
 
-        submitButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            submitButton.style.backgroundColor="blue";
-            submitComment(e);
-        
-            function submitComment(e) {
-                const data = {
-                    comment: postComment.value,
-                };
-                
-                //if the user doesn't write anything, don't post anything
-                if(data.comment === "") {
-                    return;
-                }
-                const options = {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(data)
-                }
-                console.log(`http://localhost:3000/posts/comments/${idNum}`);
-                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
-                    .then(console.log("New comment added"))
-                    .then(addTheComments)
-                    .catch(err => console.warn("Oops, something went wrong."))
-            };
-        });
-        
-        function addTheComments(){
-            for(let i = data.all[idNum].comments.length - 1; i >= 0; i--){
-                const addPostComment=document.createElement('p');
-                
-                console.log(data.all[idNum].comments[i]);
-                addPostComment.textContent=data.all[idNum].comments[i];
-                sector.append(addPostComment);
-            }
-        }
-
-        
-
-
-        console.log(data.all[idNum].comments.length);
 
         const line=document.createElement('br');
         const addReactionsList=document.createElement('div');
@@ -272,6 +226,63 @@ function getPostById(idNum){
         postReactionLoveInput.style.marginRight="9vw";
 
         sector.append(addReactionsList);
+        sector.append(line);
+
+
+
+        // art.style.border="5px solid black";
+        console.log(data.all[idNum].comments.length);
+        for(let i = 0; i < data.all[idNum].comments.length ; i++){
+            const addPostComment=document.createElement('p');           
+            console.log(data.all[idNum].comments[i]);
+            addPostComment.textContent=data.all[idNum].comments[i];
+            sector.append(addPostComment);
+            // sector.append(line);
+        }
+       
+
+        submitButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            submitButton.style.backgroundColor="blue";
+            submitComment(e);
+        
+            function submitComment(e) {
+                const data = {
+                    comment: postComment.value,
+                };
+                
+                //if the user doesn't write anything, don't post anything
+                if(data.comment === "") {
+                    return;
+                }
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }
+                console.log(`http://localhost:3000/posts/comments/${idNum}`);
+                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
+                    .then(console.log("New comment added"))
+                    .then(addTheComments)
+                    .catch(err => console.warn("Oops, something went wrong."))
+            };
+        });
+        
+        function addTheComments(){
+            const addNewComment=document.createElement('p');   
+            const num=data.all[idNum].comments.length -1 ;        
+            addNewComment.textContent=data.all[idNum].comments[num];
+            sector.append(addNewComment);
+        }
+
+        
+
+
+        console.log(data.all[idNum].comments.length);
+
+        
         // sector.append(line);
 
 
