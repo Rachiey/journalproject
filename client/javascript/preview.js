@@ -7,14 +7,19 @@ const postReactionForm=document.createElement('form');
 const postReactionSimleInput=document.createElement('button');
 const postReactionLoveInput=document.createElement('button');
 const postReactionLaughInput=document.createElement('button');
+const postForm=document.createElement('form');
+const postInput=document.createElement('button');
+const postLable=document.createElement('label');
+const postComment=document.createElement('textarea');
 
-const q="travel";
-const limit= 1;
-const key="xr36JpsP033KfmDe2JLnczqLinBF57cf";
 const checkIds=[]
 
+// const q="travel";
+// const limit= 1;
+// const key="xr36JpsP033KfmDe2JLnczqLinBF57cf";
 
-let url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${q}&limit=${limit}&offset=0&rating=g&lang=en`;
+
+// let url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${q}&limit=${limit}&offset=0&rating=g&lang=en`;
 
 // console.log(url);
 // fetch(url)
@@ -161,17 +166,13 @@ function getPostById(idNum){
         newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
         // art.style.border="5px solid black";
         // art.style.backgroundColor="blue";
-
-        const postForm=document.createElement('form');
-        const postInput=document.createElement('input');
-        const postLable=document.createElement('label');
-        const postComment=document.createElement('textarea');
         
         // postComment.type="textMessage";
         postComment.cols="55";
         postComment.rows="2";
         postComment.textContent="Comments..";
         postInput.type="submit";
+        postInput.textContent="Comment";
         postForm.append(postLable);
         postForm.append(postComment);
         // newPost.append(postForm);
@@ -223,7 +224,7 @@ function getPostById(idNum){
         addPostReactionLove.style.display="inline-block";
         addPostReactionLaugh.style.display="inline-block";
 
-        addPostReactionSmile.style.marginLeft="4vw";
+        addPostReactionSmile.style.marginLeft="6vw";
         postReactionSimleInput.style.marginRight="9vw";
         postReactionLoveInput.style.marginRight="9vw";
 
@@ -236,6 +237,11 @@ function getPostById(idNum){
       
     })
 }
+
+postInput.addEventListener('click', (e) => {
+    e.preventDefault();
+    postInput.style.backgroundColor="blue";
+})
 
 postReactionSimleInput.addEventListener('click', (e) => {
     e.preventDefault();
