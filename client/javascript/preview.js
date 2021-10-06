@@ -102,7 +102,7 @@ addPosts.addEventListener('click', (e) => {
     
 });
 
-
+console.log(checkIds);
 
 
 // addPosts.addEventListener('click', (e) => {
@@ -226,6 +226,41 @@ function getPostById(idNum){
         sector.append(addReactionsList);
         sector.append(line);
 
+        function addReaction(e, reactionType) {
+            const data = {
+                reaction : reactionType,
+            };
+            const options = {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            };
+            fetch(`http://localhost:3000/posts/reactions/${idNum}`, options)
+                .then(console.log("New reaction added"))
+                .catch(err => console.warn("Oops, something went wrong."))
+        };
+
+
+        postReactionSimleInput.addEventListener('click', (e) => {
+            e.preventDefault();
+            addReaction(e, "smile");
+            postReactionSimleInput.textContent =   1 + parseInt(postReactionSimleInput.textContent);
+        })
+        
+        postReactionLoveInput.addEventListener('click', (e) => {
+            e.preventDefault();
+            addReaction(e, "love")
+            postReactionLoveInput.textContent =   1 + parseInt(postReactionLoveInput.textContent);
+        })
+        
+        postReactionLaughInput.addEventListener('click', (e) => {
+            e.preventDefault();
+            addReaction(e, "laugh")
+            postReactionLaughInput.textContent =   1 + parseInt(postReactionLaughInput.textContent);
+        })
+
 
         console.log(data.all[idNum].comments.length);
         for(let i = 0; i < data.all[idNum].comments.length ; i++){
@@ -273,26 +308,15 @@ function getPostById(idNum){
 }
 
 
+
+
 function addTheComments(idNum,value){
     const addNewComment=document.createElement('p');       
     addNewComment.textContent=value;
     sector.append(addNewComment);
 }
 
-postReactionSimleInput.addEventListener('click', (e) => {
-    e.preventDefault();
-    postReactionSimleInput.textContent =   1 + parseInt(postReactionSimleInput.textContent);
-})
 
-postReactionLoveInput.addEventListener('click', (e) => {
-    e.preventDefault();
-    postReactionLoveInput.textContent =   1 + parseInt(postReactionLoveInput.textContent);
-})
-
-postReactionLaughInput.addEventListener('click', (e) => {
-    e.preventDefault();
-    postReactionLaughInput.textContent =   1 + parseInt(postReactionLaughInput.textContent);
-})
 
 
 // post_1.addEventListener('click', (e) => {
