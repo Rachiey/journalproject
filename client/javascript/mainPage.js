@@ -23,6 +23,7 @@ function init() {
         let img = document.createElement("img");
         let fc = document.createElement("figcaption");
         img.src = content.data[0].images.downsized.url;
+        console.log(img.src);
         img.alt = content.data[0].title;
         fc.textContent = content.data[0].title;
         fig.appendChild(img);
