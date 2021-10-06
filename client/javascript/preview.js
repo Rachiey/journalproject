@@ -176,8 +176,6 @@ function getPostById(idNum){
         postComment.placeholder="Comments..";
         submitButton .type="submit";
         submitButton.textContent="Comment";
-
-        postComment.textContent="Comments..";
         
         postForm.append(postLable);
         postForm.append(postComment);
