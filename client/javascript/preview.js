@@ -193,21 +193,42 @@ function getPostById(idNum){
         const addPostReactionSmile=document.createElement('p');
         const addPostReactionLove=document.createElement('p');
         const addPostReactionLaugh=document.createElement('p');
+        const postReactionForm=document.createElement('form');
+        const postReactionSimleInput=document.createElement('button');
+        const postReactionLoveInput=document.createElement('button');
+        const postReactionLaughInput=document.createElement('button');
+
+        postReactionSimleInput.type="submit";
+        postReactionLoveInput.type="submit";
+        postReactionLaughInput.type="submit";
+
+        postReactionSimleInput.textContent=data.all[idNum].reactions.smile;
+        postReactionLoveInput.textContent=data.all[idNum].reactions.love;
+        postReactionLaughInput.textContent=data.all[idNum].reactions.laugh;
+        
         console.log(data.all[idNum].reactions);
-        addPostReactionSmile.textContent=`Smile : ${data.all[idNum].reactions.smile}`;
-        addPostReactionLove.textContent=`Love :  ${data.all[idNum].reactions.love}`;
-        addPostReactionLaugh.textContent=`Laugh : ${data.all[idNum].reactions.laugh}`;
+        addPostReactionSmile.textContent=`Smile : `;
+        addReactionsList.append(addPostReactionSmile);
+        addReactionsList.append(postReactionSimleInput);
+
+        addPostReactionLove.textContent=`Love : `;
+        addReactionsList.append(addPostReactionLove);
+        addReactionsList.append(postReactionLoveInput);
+
+        addPostReactionLaugh.textContent=`Laugh : `;
+        addReactionsList.append(addPostReactionLaugh);
+        addReactionsList.append(postReactionLaughInput);
 
         addPostReactionSmile.style.display="inline-block";
         addPostReactionLove.style.display="inline-block";
         addPostReactionLaugh.style.display="inline-block";
 
-        addPostReactionSmile.style.width="15vw";
-        addPostReactionLove.style.width="15vw";
+        addPostReactionSmile.style.marginLeft="4vw";
+        postReactionSimleInput.style.marginRight="9vw";
+        postReactionLoveInput.style.marginRight="9vw";
 
-        addReactionsList.append(addPostReactionSmile);
-        addReactionsList.append(addPostReactionLove);
-        addReactionsList.append(addPostReactionLaugh);
+
+        
         sector.append(addReactionsList);
         // sector.append(line);
         
