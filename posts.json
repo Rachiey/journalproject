@@ -4,7 +4,23 @@
         "location": "France",
         "post": "I had a really nice holiday!",
         "gif": "",
-        "comments": "[]",
-        "reactions": "[]"
+        "comments": [],
+        "reactions": {"smile": 2, "laugh": 0, "love": 3}
+    },
+    {
+        "id": 2,
+        "location": "London",
+        "post": "The sights were great!",
+        "gif": "",
+        "comments": [],
+        "reactions": {"smile": 4, "laugh": 1, "love": 5}
+    },
+    {
+        "id": 3,
+        "location": "Germany",
+        "post": "The food here was delicious!",
+        "gif": "",
+        "comments": [],
+        "reactions": {"smile": 6, "laugh": 3, "love": 4}
     }
 ]
