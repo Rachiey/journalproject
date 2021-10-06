@@ -17,6 +17,7 @@ const postComment=document.createElement('textarea');
 const checkIds=[]
 
 
+
 // const q="travel";
 // const limit= 1;
 // const key="xr36JpsP033KfmDe2JLnczqLinBF57cf";
@@ -132,7 +133,7 @@ function getPostById(idNum){
     fetch('http://localhost:3000/posts')
     .then(obj => obj.json())
     .then(data => {
-            
+        const CommentsArr=[]; 
         const art=document.getElementById('newPost');
         const sector=document.createElement('section');
         const newHeader=document.createElement('header');
@@ -177,7 +178,6 @@ function getPostById(idNum){
         submitButton .type="submit";
         submitButton.textContent="Comment";
 
-        postComment.textContent="Comments..";
         
         postForm.append(postLable);
         postForm.append(postComment);
@@ -187,14 +187,51 @@ function getPostById(idNum){
 
         // art.style.border="5px solid black";
         console.log(data.all[idNum].comments.length);
-        for(let i = data.all[idNum].comments.length - 1; i >= 0; i--){
-            const addPostComment=document.createElement('p');
-            
-            console.log(data.all[idNum].comments[i]);
-            addPostComment.textContent=data.all[0].comments[i];
-            sector.append(addPostComment);
-            // sector.append(line);
+       
+
+        submitButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            submitButton.style.backgroundColor="blue";
+            submitComment(e);
+        
+            function submitComment(e) {
+                const data = {
+                    comment: postComment.value,
+                };
+                
+                //if the user doesn't write anything, don't post anything
+                if(data.comment === "") {
+                    return;
+                }
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }
+                console.log(`http://localhost:3000/posts/comments/${idNum}`);
+                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
+                    .then(console.log("New comment added"))
+                    .then(addTheComments)
+                    .catch(err => console.warn("Oops, something went wrong."))
+            };
+        });
+        
+        function addTheComments(){
+            for(let i = data.all[idNum].comments.length - 1; i >= 0; i--){
+                const addPostComment=document.createElement('p');
+                
+                console.log(data.all[idNum].comments[i]);
+                addPostComment.textContent=data.all[idNum].comments[i];
+                sector.append(addPostComment);
+            }
         }
+
+        
+
+
+        console.log(data.all[idNum].comments.length);
 
         const line=document.createElement('br');
         const addReactionsList=document.createElement('div');
@@ -243,33 +280,6 @@ function getPostById(idNum){
       
     })
 
-    submitButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        submitButton.style.backgroundColor="blue";
-        submitComment(e);
-    
-        function submitComment(e) {
-            const data = {
-                comment: postComment.value,
-            };
-            
-            //if the user doesn't write anything, don't post anything
-            if(data.comment === "") {
-                return;
-            }
-            const options = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            }
-            console.log(`http://localhost:3000/posts/comments/${idNum}`);
-            fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
-                .then(console.log("New comment added"))
-                .catch(err => console.warn("Oops, something went wrong."))
-        };
-    });
 }
 
 
