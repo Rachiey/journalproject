@@ -22,8 +22,8 @@ app.get("/posts/:id", (req, res) => {
 
 //POST
 //adds new post
-app.post("/posts/new", (req, res) => {
-    Post.addNewPost(req.body); //not sure where req.body is referring to here
+app.post("/posts", (req, res) => {
+    Post.addNewPost(req.body); 
     res.statusCode = 201;
     res.send(Post.all);
 })
