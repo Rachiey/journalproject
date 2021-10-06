@@ -59,7 +59,7 @@ app.post("/posts/comments/:id", (req, res) => {
             throw new Error("Post not found");
         }
         
-        Post.addNewComment(id, comment);
+        Post.addNewComment(id, newComment);
         const updatedPost = Post.getPost(id);
         res.statusCode = 201;
         res.send(updatedPost);
