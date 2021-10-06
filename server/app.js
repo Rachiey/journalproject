@@ -96,12 +96,14 @@ app.put("/posts/reactions/:id", (req, res) => {
         const id = parseInt(req.params.id);
         const newReaction = req.body.reaction;
 
+        console.log(newReaction);
+
         //makes sure the post exists (so the user can actually react to it)
         if(id > Post.all.length) {
             throw new Error("Post not found");
         }
 
-        Post.newReaction(id, newReaction);
+        Post.addNewReaction(id, newReaction);
         res.send("Updated post");
     }
     catch(err) {
@@ -109,5 +111,6 @@ app.put("/posts/reactions/:id", (req, res) => {
         res.send(err.message);
     }
 })
+
 
 module.exports = app;

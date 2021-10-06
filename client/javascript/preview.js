@@ -72,8 +72,9 @@ addPosts.addEventListener('click', (e) => {
             newH2.className="locs";
             sector.className="selection";
             newMsg.className="p";
-            sector.id=`${i}`;
-            checkIds.push(sector.id);
+            sector.id=data[i].id;
+            // checkIds.push(sector.id);
+            checkIds.push(data[i].id);
             console.log(checkIds);
 
             newHeader.append(newH2);
@@ -133,7 +134,7 @@ console.log(checkIds);
 function getPostById(idNum){
     console.log(typeof(idNum));    
     console.log(idNum);
-    fetch('http://localhost:3000/posts')
+    fetch(`http://localhost:3000/posts/${idNum}`)
     .then(obj => obj.json())
     .then(data => {
         const CommentsArr=[]; 
@@ -143,10 +144,10 @@ function getPostById(idNum){
         const newImg=document.createElement('img');
         const newMsg=document.createElement('p');
 
-        newH1.textContent=data.all[idNum].title;
-        newH2.textContent=data.all[idNum].location;
-        newMsg.textContent=data.all[idNum].post;
-        newImg.src=data.all[idNum].gif;
+        newH1.textContent=data.title;
+        newH2.textContent=data.location;
+        newMsg.textContent=data.post;
+        newImg.src=data.gif;
 
         newImg.className="gifs";
         newHeader.className="heads";
@@ -188,7 +189,7 @@ function getPostById(idNum){
         const line=document.createElement('br');
         const addReactionsList=document.createElement('div');
         sector.append(line);
-        console.log(data.all[idNum].reactions.smile);
+        console.log(data.reactions.smile);
       
         const addPostReactionSmile=document.createElement('p');
         const addPostReactionLove=document.createElement('p');
@@ -198,11 +199,11 @@ function getPostById(idNum){
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
 
-        postReactionSimleInput.textContent=data.all[idNum].reactions.smile;
-        postReactionLoveInput.textContent=data.all[idNum].reactions.love;
-        postReactionLaughInput.textContent=data.all[idNum].reactions.laugh;
+        postReactionSimleInput.textContent=data.reactions.smile;
+        postReactionLoveInput.textContent=data.reactions.love;
+        postReactionLaughInput.textContent=data.reactions.laugh;
         
-        console.log(data.all[idNum].reactions);
+        console.log(data.reactions);
         addPostReactionSmile.innerHTML=`&#128522;  `;
         addReactionsList.append(addPostReactionSmile);
         addReactionsList.append(postReactionSimleInput);
@@ -262,11 +263,11 @@ function getPostById(idNum){
         })
 
 
-        console.log(data.all[idNum].comments.length);
-        for(let i = 0; i < data.all[idNum].comments.length ; i++){
+        console.log(data.comments.length);
+        for(let i = 0; i < data.comments.length ; i++){
             const addPostComment=document.createElement('p');           
-            // console.log(data.all[idNum].comments[i]);
-            addPostComment.textContent=data.all[idNum].comments[i];
+            // console.log(data.comments[i]);
+            addPostComment.textContent=data.comments[i];
             sector.append(addPostComment);
         }
        
