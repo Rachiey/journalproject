@@ -8,12 +8,14 @@
     margin: 0%;
 }
 
-header{
+#topHeader{
     background-color: grey;
 }
 
 header .topnav {
+
     height: var(--headerheight))
+
 }
 
 .topnav {

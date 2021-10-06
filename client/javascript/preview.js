@@ -8,11 +8,14 @@ const postReactionSimleInput=document.createElement('button');
 const postReactionLoveInput=document.createElement('button');
 const postReactionLaughInput=document.createElement('button');
 const postForm=document.createElement('form');
-const postInput=document.createElement('button');
+
+const submitButton=document.createElement('button');
+
 const postLable=document.createElement('label');
 const postComment=document.createElement('textarea');
 
 const checkIds=[]
+
 
 // const q="travel";
 // const limit= 1;
@@ -56,9 +59,9 @@ addPosts.addEventListener('click', (e) => {
             const newH2=document.createElement('h2');
             const newImg=document.createElement('img');
             const newMsg=document.createElement('p');
-            newH1.textContent=data[i].post;
+            newH1.textContent=data[i].title;
             newH2.textContent=data[i].location;
-            newMsg.textContent=data[i].message;
+            newMsg.textContent=data[i].post;
             newImg.src=data[i].gif;
 
             newImg.className="gifs";
@@ -138,9 +141,9 @@ function getPostById(idNum){
         const newImg=document.createElement('img');
         const newMsg=document.createElement('p');
 
-        newH1.textContent=data.all[idNum].post;
+        newH1.textContent=data.all[idNum].title;
         newH2.textContent=data.all[idNum].location;
-        newMsg.textContent=data.all[idNum].message;
+        newMsg.textContent=data.all[idNum].post;
         newImg.src=data.all[idNum].gif;
 
         newImg.className="gifs";
@@ -170,13 +173,16 @@ function getPostById(idNum){
         // postComment.type="textMessage";
         postComment.cols="55";
         postComment.rows="2";
+        postComment.placeholder="Comments..";
+        submitButton .type="submit";
+        submitButton.textContent="Comment";
+
         postComment.textContent="Comments..";
-        postInput.type="submit";
-        postInput.textContent="Comment";
+        
         postForm.append(postLable);
         postForm.append(postComment);
         // newPost.append(postForm);
-        postForm.append(postInput);
+        postForm.append(submitButton);
         sector.append(postForm);
 
         // art.style.border="5px solid black";
@@ -230,18 +236,46 @@ function getPostById(idNum){
 
         sector.append(addReactionsList);
         // sector.append(line);
-        
+
 
         art.append(sector);
         sector.style.border="5px solid black";
       
     })
+
+    submitButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        submitButton.style.backgroundColor="blue";
+        submitComment(e);
+    
+        function submitComment(e) {
+            const data = {
+                comment: postComment.value,
+            };
+            
+            //if the user doesn't write anything, don't post anything
+            if(data.comment === "") {
+                return;
+            }
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }
+            console.log(`http://localhost:3000/posts/comments/${idNum}`);
+            fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
+                .then(console.log("New comment added"))
+                .catch(err => console.warn("Oops, something went wrong."))
+        };
+    });
 }
 
-postInput.addEventListener('click', (e) => {
-    e.preventDefault();
-    postInput.style.backgroundColor="blue";
-})
+
+
+
+
 
 postReactionSimleInput.addEventListener('click', (e) => {
     e.preventDefault();
@@ -305,18 +339,18 @@ postReactionLaughInput.addEventListener('click', (e) => {
 //         // art.style.backgroundColor="blue";
 
 //         const postForm=document.createElement('form');
-//         const postInput=document.createElement('input');
+//         const submitButton=document.createElement('input');
 //         const postLable=document.createElement('label');
 //         const postComment=document.createElement('textarea');
 //         // postComment.type="textMessage";
 //         postComment.cols="55";
 //         postComment.rows="2";
 //         postComment.textContent="Comments..";
-//         postInput.type="submit";
+//         submitButton.type="submit";
 //         postForm.append(postLable);
 //         postForm.append(postComment);
 //         // newPost.append(postForm);
-//         postForm.append(postInput);
+//         postForm.append(submitButton);
 //         sector.append(postForm);
 
 //         // art.style.border="5px solid black";
@@ -354,13 +388,13 @@ postReactionLaughInput.addEventListener('click', (e) => {
 //     // newPost.style.border= "5px solid black";
 
 //     // const postForm=document.createElement('form');
-//     // const postInput=document.createElement('input');
+//     // const submitButton=document.createElement('input');
 //     // const postLable=document.createElement('label');
 //     // const postComment=document.createElement('input');
 //     // postComment.type="textMessage";
-//     // postInput.type="submit";
+//     // submitButton.type="submit";
 //     // newPost.append(postComment);
-//     // postForm.append(postInput);
+//     // postForm.append(submitButton);
 //     // newPost.append(postForm);
     
 // });
