@@ -3,14 +3,15 @@ const post_1=document.getElementById("post_1");
 const post_2=document.getElementById("post_2");
 const addPosts=document.getElementById("addPosts");
 const classOverview=document.getElementById("classOverview");
+
 const postReactionForm=document.createElement('form');
 const postReactionSimleInput=document.createElement('button');
 const postReactionLoveInput=document.createElement('button');
 const postReactionLaughInput=document.createElement('button');
 const postForm=document.createElement('form');
-
+const art=document.getElementById('newPost');
+const sector=document.createElement('section');
 const submitButton=document.createElement('button');
-
 const postLable=document.createElement('label');
 const postComment=document.createElement('textarea');
 
@@ -102,6 +103,8 @@ addPosts.addEventListener('click', (e) => {
 });
 
 
+
+
 // addPosts.addEventListener('click', (e) => {
 //     e.preventDefault();
 
@@ -134,8 +137,6 @@ function getPostById(idNum){
     .then(obj => obj.json())
     .then(data => {
         const CommentsArr=[]; 
-        const art=document.getElementById('newPost');
-        const sector=document.createElement('section');
         const newHeader=document.createElement('header');
         const newH1=document.createElement('h1');
         const newH2=document.createElement('h2');
@@ -168,10 +169,8 @@ function getPostById(idNum){
         newImg.style.width="200px";
         newImg.style.height="200px";
         newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
-        // art.style.border="5px solid black";
-        // art.style.backgroundColor="blue";
+
         
-        // postComment.type="textMessage";
         postComment.cols="55";
         postComment.rows="2";
         postComment.placeholder="Comments..";
@@ -229,15 +228,12 @@ function getPostById(idNum){
         sector.append(line);
 
 
-
-        // art.style.border="5px solid black";
         console.log(data.all[idNum].comments.length);
         for(let i = 0; i < data.all[idNum].comments.length ; i++){
             const addPostComment=document.createElement('p');           
-            console.log(data.all[idNum].comments[i]);
+            // console.log(data.all[idNum].comments[i]);
             addPostComment.textContent=data.all[idNum].comments[i];
             sector.append(addPostComment);
-            // sector.append(line);
         }
        
 
@@ -265,26 +261,10 @@ function getPostById(idNum){
                 console.log(`http://localhost:3000/posts/comments/${idNum}`);
                 fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
                     .then(console.log("New comment added"))
-                    .then(addTheComments)
+                    .then(addTheComments(idNum,postComment.value))
                     .catch(err => console.warn("Oops, something went wrong."))
             };
         });
-        
-        function addTheComments(){
-            const addNewComment=document.createElement('p');   
-            const num=data.all[idNum].comments.length -1 ;        
-            addNewComment.textContent=data.all[idNum].comments[num];
-            sector.append(addNewComment);
-        }
-
-        
-
-
-        console.log(data.all[idNum].comments.length);
-
-        
-        // sector.append(line);
-
 
         art.append(sector);
         sector.style.border="5px solid black";
@@ -294,9 +274,11 @@ function getPostById(idNum){
 }
 
 
-
-
-
+function addTheComments(idNum,value){
+    const addNewComment=document.createElement('p');       
+    addNewComment.textContent=value;
+    sector.append(addNewComment);
+}
 
 postReactionSimleInput.addEventListener('click', (e) => {
     e.preventDefault();
