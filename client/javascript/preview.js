@@ -273,7 +273,6 @@ function getPostById(idNum){
 
         submitButton.addEventListener('click', (e) => {
             e.preventDefault();
-            submitButton.style.backgroundColor="blue";
             submitComment(e);
         
             function submitComment(e) {
@@ -296,6 +295,7 @@ function getPostById(idNum){
                 fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
                     .then(console.log("New comment added"))
                     .then(addTheComments(idNum,postComment.value))
+                    .then(postComment.value="")
                     .catch(err => console.warn("Oops, something went wrong."))
             };
         });
