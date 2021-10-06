@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "jest": "^27.2.4",
+    "supertest": "^6.1.6",
+    "watchify": "^4.0.0"
+  }
+}

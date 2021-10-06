@@ -1,26 +1,30 @@
 [
     {
         "id": 1,
+        "title": "South of France",
         "location": "France",
         "post": "I had a really nice holiday!",
-        "gif": "",
-        "comments": [],
+        "gif": "https://media1.giphy.com/media/Btn42lfKKrOzS/giphy-downsized.gif?cid=77234f62x3vl0atyu3bxe8lpjfkmvlmpwcccb4otluzyftw5&rid=giphy-downsized.gif&ct=g",
+        "comments": ["great","well done","working"],
         "reactions": {"smile": 2, "laugh": 0, "love": 3}
     },
     {
         "id": 2,
+        "title": "Sightseeing in London",
         "location": "London",
         "post": "The sights were great!",
-        "gif": "",
-        "comments": [],
+        "gif": "https://media3.giphy.com/media/9F2VWRiJypeBq/giphy.gif?cid=77234f62e5wzz9gac4a9fcnw6mcqi7t9i51c57ni4fc9resf&rid=giphy.gif&ct=g",
+        "comments": ["great","well done","working"],
         "reactions": {"smile": 4, "laugh": 1, "love": 5}
     },
     {
         "id": 3,
+        "title": "German Food",
         "location": "Germany",
         "post": "The food here was delicious!",
-        "gif": "",
-        "comments": [],
+        "gif": "https://media4.giphy.com/media/8F3bK4aq1tCo0TLkf7/giphy.gif?cid=77234f627se5msjwhx96b5h43xh1ikm2hqo0fu06iaoruky8&rid=giphy.gif&ct=g",
+        "comments": ["great","well done","working"],
         "reactions": {"smile": 6, "laugh": 3, "love": 4}
     }
+    
 ]
