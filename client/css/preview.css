@@ -14,7 +14,7 @@
 
 header .topnav {
 
-    height: var(--headerheight))
+    height: var(--headerheight)
 
 }
 
@@ -25,17 +25,17 @@ header .topnav {
 }
 
 .topnav{
-    width: 25vw;
+    width: 150px;
     right: 0;
     position:absolute;
     top: 0;
-    right: 0;
 }
 
 .topnav a {
     color: #f2f2f2;
     /* text-align: center;
     padding: 14px 16px; */
+    right: 5px;
     text-decoration: none;
     font-size: 17px;
     height: calc(var(--headerheight)/4);
@@ -52,10 +52,10 @@ header .topnav {
     color: white;
   }
 
-.header{
-    width: 70vw;
-    /* background-color: burlywood; */
-}
+  .topnav a.active:hover {
+    background-color: rgb(59, 216, 143);
+    color: white;
+  }
 
 .hideClass {
     visibility: hidden;
@@ -87,7 +87,9 @@ header .topnav {
 }
 
 #pageName{
-    width: 50vw;
+    /* width: 50vw; */
+    margin-left: 70px;
+    margin-right: 150px;
     text-align: center;
     /* background-color: darkblue; */
 }
@@ -99,7 +101,7 @@ header .topnav {
 }
 
 div a{
-    text-align: right;
+    text-align: left;
     display: block;
     right: 0;
 }
