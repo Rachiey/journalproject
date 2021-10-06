@@ -10,7 +10,13 @@
 
 .header{
     width: 70vw;
-    background-color: burlywood;
+    /* background-color: burlywood; */
+}
+
+.hideClass {
+    visibility: hidden;
+    position: fixed;
+    /* background-color: darkolivegreen; */
 }
 
 .header img{
@@ -37,20 +43,20 @@
 
 #logo{
     width: 70px;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
 }
 
 #pageName{
     width: 50vw;
     text-align: center;
-    background-color: darkblue;
+    /* background-color: darkblue; */
 }
 
 .pageLinks{
     top: 0;
     right: 0;
     /* width: 20vw; */
-    background-color: darkolivegreen;
+    /* background-color: darkolivegreen; */
 
 }
 
@@ -69,19 +75,19 @@ header{
     height: var(--headerheight);
 }
 
-section header{
+.selection .heads{
     height: 5vh;
 }
 
-h1{
+.titles{
     width:  calc((0.6 * 100vw)/3);
     display: inline-block;
     text-align: center;
-    font-size: x-large;
+    font-size: large;
     margin-top: 5px;
 }
 
-h2{
+.locs{
     margin-left: 2px;
     display: inline-block;
     width:  calc((0.3 * 100vw)/3);
@@ -101,7 +107,7 @@ article{
     flex-wrap: wrap;
 }
 
-article section {
+#addPosts .selection {
     width: calc(100vw/3);
     border: 5px solid whitesmoke;
     height: 35vh;
@@ -127,7 +133,7 @@ footer{
 
 }
 
-p{
+.p{
     margin-top: 5px;
 }
 

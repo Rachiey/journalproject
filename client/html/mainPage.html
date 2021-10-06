@@ -33,7 +33,7 @@
                 <option>Sightseeing</option>
             </select>
         </div>
-        <div id="charCounterPost">280 characters remaining</div>
+    
         
         <label for="title">Post Title:</label>
         <input type="text" id="title" name="title">
@@ -42,22 +42,16 @@
         <input type="text" id="location" name="location">
 
         <div>
-        <textarea name="comments" id="comments" maxlength="500"></textarea>
+        <textarea name="comments" id="newPost" maxlength="500"></textarea>
         </div>
+        <input type ="submit" id = "journalsubmit" value ="Submit Post">
+        <div id="charCounterPost">500 characters remaining</div>
 
-        <label for="search">Add GIF:</label>
+        <label for="search">Search</label>
         <input id="search" type="search" />
         <button id="btnSearch">Search</button>
-        <input type ="submit" id = "journalpost" value ="Submit Post">
-        <div class="out"></div>
-        <div class="wrapper">
-            <h3>Your hashtags</h3>
-            <p class="info">Type your hashtag & click enter.</p>
-            <input type="text" id="hashtags" autocomplete="off">
-            <div class="tag-container">
-            </div>
-          </div>
         </form>
+        <div class="out"></div>
       
     <footer><p>Empty footer</p></footer>
 </body>

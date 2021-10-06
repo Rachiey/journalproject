@@ -1,3 +1,5 @@
+const counterPost = document.getElementById("charCounterPost");
+
 //for the GIF feature 
 let APIKEY = "EmK1vBdg1ZIGje2nKx614fyuVDlGOxjE";
 // you will need to get your own API KEY
@@ -23,6 +25,7 @@ function init() {
         let img = document.createElement("img");
         let fc = document.createElement("figcaption");
         img.src = content.data[0].images.downsized.url;
+        console.log(img.src);
         img.alt = content.data[0].title;
         fc.textContent = content.data[0].title;
         fig.appendChild(img);
@@ -38,30 +41,14 @@ function init() {
 }
 
 
-//hashtag feature 
-let input, hashtagArray, container, t;
-
-input = document.querySelector('#hashtags');
-container = document.querySelector('.tag-container');
-hashtagArray = [];
-
-input.addEventListener('keyup', e => {
-    if (e.which == 13 && input.value.length > 0) {
-      var text = document.createTextNode(input.value);
-      var p = document.createElement('p');
-      container.appendChild(p);
-      p.appendChild(text);
-      p.classList.add('tag');
-      input.value = '';
-      
-      let deleteTags = document.querySelectorAll('.tag');
-      
-      for(let i = 0; i < deleteTags.length; i++) {
-        deleteTags[i].addEventListener('click', () => {
-          container.removeChild(deleteTags[i]);
-        });
-      }
-    }
+//Character Counter 
+newPost.addEventListener("input", (e) => {
+  const target = e.target;
+  const maxLength = target.getAttribute("maxlength");
+  let currentLength = target.value.length;
+  counterPost.textContent = `${maxLength - currentLength} characters remaining`;
+// Button is enabled since textarea has text:
+addPostButton.disabled = false;
 });
 
 
@@ -97,9 +84,9 @@ function submitPost(e) {
   fetch('http://localhost:3000/posts', options)
     .then(console.log(options))
     .catch(err => console.warn('Oops, something went wrong.'))
-}
+  };
+
 
 submitButton.addEventListener('click', e => {
   submitPost(e);
-})
-
+});
