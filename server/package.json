@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "dev": "nodemon app.js",
-    "start": "node app.js",
+    "dev": "nodemon  ./server/index.js",
+    "start": "node  ./server/index.js",
     "start-dev": "nodemon app.js"
   },
   "keywords": [],
