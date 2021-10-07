@@ -3,10 +3,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #d0efff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header {
-    background-color: grey;
+    background-color: #187bcd;
     height: 150px;
 }
 
@@ -20,15 +22,16 @@ header {
   
 .header h1 {
     position: relative;
-    font-size: 50px;
-    top: 18px;
+    font-family: 'Birthstone', cursive;
+    font-size: 65px;
+    top: 10px;
     left: 10px;
     color: black;
   }
 
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #03254c;
     height: 50px;
     
   }
@@ -48,9 +51,14 @@ header {
   }
   
   .topnav a.active {
-    background-color: #04AA6D;
+    background-color: #1167b1;
     color: white;
   }
+
+h2 {
+  font-family: 'Birthstone', cursive;
+  font-size: 35px;
+}
 
   textarea {
       resize: both; 
@@ -65,7 +73,7 @@ header {
 
 
 footer {
-    background-color: grey;
+    background-color: #187bcd;
     padding: 5px;
     margin-top: auto;
     height: 60px;
