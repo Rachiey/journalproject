@@ -272,6 +272,7 @@ function getPostById(idNum){
             const addPostComment=document.createElement('p');           
             // console.log(data.all[idNum].comments[i]);
             addPostComment.textContent=data.comments[i];
+            addPostComment.style.fontFamily="'Montserrat', sans-serif";
             sector.append(addPostComment);
         }
        
@@ -312,12 +313,22 @@ function getPostById(idNum){
 
 }
 
+function expansion() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " expanded";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
 
 
 
 function addTheComments(idNum,value){
     const addNewComment=document.createElement('p');       
     addNewComment.textContent=value;
+    addNewComment.style.fontFamily="'Montserrat', sans-serif";
     sector.append(addNewComment);
 }
 
