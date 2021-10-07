@@ -336,6 +336,7 @@ footer{
         width: 28px;
         /* background-color: cadetblue; */
     }
+
   
 }
 
@@ -343,15 +344,24 @@ footer{
 @media only screen and (max-width: 520px){
 
     #pageName{
-        font-size: 36px;
+        font-size: 38px;
     }
+
+
+    .topnav{
+        width: 90px;
+    }
+
+    .topnav a {
+        font-size: 10px;       
+      }
 
 }
 
 @media only screen and (max-width: 480px){
 
     #pageName{
-        font-size: 28px;
+        font-size: 32px;
     }
 
 }
@@ -360,7 +370,7 @@ footer{
 @media only screen and (max-width: 420px){
 
     #topHeader{
-        height: 12vh;
+        height: 10vh;
     }
  
     #addPosts > .selection{
@@ -382,7 +392,7 @@ footer{
     }
     
     #pageName{
-        font-size: 25px;
+        font-size: 26px;
         margin-left: 5px;
     }
     
@@ -406,26 +416,65 @@ footer{
         font-size: x-small;
     }
 
-    .topnav a {
-        font-size: 12px;
-        height: calc(15vh/4);
-        
-    }
-
     #logo{
         width: 12px;
         /* background-color: cadetblue; */
     }
 
     .topnav a {
-        font-size: 12px;
-        height: calc(12vh/4);
+        font-size: 10px;
+        height: calc(10vh/4);
         
       }
 
       header .topnav {
-        height: 12vh;
+        height: 10vh;
     
     }
   
+}
+
+
+
+@media only screen and (max-width: 380px){
+    
+    img.gifs{
+        width: 180px;
+        height: 180px;
+        margin-left: calc((100vw - 180px)/2);
+    }
+
+    #pageName{
+        font-size: 23px;
+        margin-left: 0px;
+    }
+
+
+    .topnav{
+        width: 70px;
+    }
+
+    .topnav a {
+        font-size: 8px;       
+      }
+
+}
+
+@media only screen and (max-width: 350px){
+    
+    img.gifs{
+        width: 150px;
+        height: 150px;
+        margin-left: calc((100vw - 150px)/2);
+    }
+
+    #pageName{
+        font-size: 20px;
+    }
+
+    #logo{
+        width: 8px;
+    }
+
+
 }
