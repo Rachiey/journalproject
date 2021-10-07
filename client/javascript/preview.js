@@ -14,6 +14,10 @@ const sector=document.createElement('section');
 const submitButton=document.createElement('button');
 const postLable=document.createElement('label');
 const postComment=document.createElement('textarea');
+const line=document.createElement('br');
+
+
+submitButton.className="submitButton";
 
 const checkIds=[];
 const selectPostID=[];
@@ -111,29 +115,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
 console.log(checkIds);
 
 
-// addPosts.addEventListener('click', (e) => {
-//     e.preventDefault();
-
-//     fetch('http://localhost:3000/posts')
-//     .then(obj => obj.json())
-//     .then(data => setID(data.all))
-
-//     function setID(data){
-//         console.log(data);
-//         for (let i = data.length - 1; i >= 0; i--) {
-//             var idNum=`${i}`;
-//             const getIdNum=document.getElementById(idNum);
-//             getIdNum.addEventListener('click', (e) => {
-//                 e.preventDefault();
-//                 classOverview.className="hideClass";
-//                 getPostById(idNum);
-//         })
-//         }
-
-//     }
-
-    
-// });
 
 
 function getPostById(idNum){
@@ -170,10 +151,10 @@ function getPostById(idNum){
         // art.style.width="50vw";
         // art.style.marginLeft="25vw";
         art.style.marginTop="15vh";
-        newH1.style.width="calc((0.7 * 100vw)/2)";
+        // newH1.style.width="calc((0.7 * 100vw)/2)";
         newImg.style.width="200px";
         newImg.style.height="200px";
-        newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
+        newImg.style.marginLeft="calc((calc(100vw/2) - 150px)/2)";
 
         
         postComment.cols="55";
@@ -181,16 +162,27 @@ function getPostById(idNum){
         postComment.placeholder="Comments..";
         submitButton .type="submit";
         submitButton.textContent="Comment";
+        newMsg.style.fontFamily="'Montserrat', sans-serif";
+        newMsg.style.fontSize="20px";
+        newH1.style.fontSize="20px";
+        newH1.style.paddingLeft="20px";
+        newImg.style.paddingLeft="20px";
+        newH1.style.marginBottom="8px";
+        newMsg.style.marginBottom="8px";
+        newMsg.style.marginTop="8px";
+        // submitButton.style.left=0;
+        
         
         postForm.append(postLable);
         postForm.append(postComment);
         // newPost.append(postForm);
+        postForm.append(line);
         postForm.append(submitButton);
         sector.append(postForm);
 
 
 
-        const line=document.createElement('br');
+        
         const addReactionsList=document.createElement('div');
         sector.append(line);
         console.log(data.reactions.smile);
@@ -202,6 +194,10 @@ function getPostById(idNum){
         postReactionSimleInput.type="submit";
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
+
+        addPostReactionSmile.className="smile";
+        postReactionLoveInput.className="love";
+        postReactionLaughInput.className="laugh";
 
         postReactionSimleInput.textContent=data.reactions.smile;
         postReactionLoveInput.textContent=data.reactions.love;
@@ -273,6 +269,7 @@ function getPostById(idNum){
             // console.log(data.all[idNum].comments[i]);
             addPostComment.textContent=data.comments[i];
             addPostComment.style.fontFamily="'Montserrat', sans-serif";
+            addPostComment.style.paddingLeft="20px";
             sector.append(addPostComment);
         }
        
@@ -307,7 +304,7 @@ function getPostById(idNum){
         });
 
         art.append(sector);
-        sector.style.border="5px solid black";
+        sector.style.border="5px solid #a9cfe2";
       
     })
 
@@ -329,116 +326,7 @@ function addTheComments(idNum,value){
     const addNewComment=document.createElement('p');       
     addNewComment.textContent=value;
     addNewComment.style.fontFamily="'Montserrat', sans-serif";
+    addNewComment.style.paddingLeft="20px";
     sector.append(addNewComment);
 }
 
-
-
-
-// post_1.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     classOverview.className="hideClass";
-
-//     fetch('http://localhost:3000/posts')
-//     .then(obj => obj.json())
-//     .then(data => {
-            
-//         const art=document.getElementById('newPost');
-//         const sector=document.createElement('section');
-//         const newHeader=document.createElement('header');
-//         const newH1=document.createElement('h1');
-//         const newH2=document.createElement('h2');
-//         const newImg=document.createElement('img');
-//         const newMsg=document.createElement('p');
-
-//         newH1.textContent=data.all[0].post;
-//         newH2.textContent=data.all[0].location;
-//         newMsg.textContent=data.all[0].message;
-//         newImg.src=data.all[0].gif;
-
-//         newImg.className="gifs";
-//         newHeader.className="heads";
-//         newH1.className="titles";
-//         newH2.className="locs";
-//         sector.className="selection";
-//         newMsg.className="p";
-
-//         newHeader.append(newH2);
-//         newHeader.append(newH1);
-//         sector.append(newHeader);
-//         sector.append(newImg);
-//         sector.append(newMsg);
-//         // art.append(sector);
-
-//         art.style.width="50vw";
-//         art.style.marginLeft="25vw";
-//         art.style.marginTop="15vh";
-//         newH1.style.width="calc((0.6 * 100vw)/2)";
-//         newImg.style.width="200px";
-//         newImg.style.height="200px";
-//         newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
-//         // art.style.border="5px solid black";
-//         // art.style.backgroundColor="blue";
-
-//         const postForm=document.createElement('form');
-//         const submitButton=document.createElement('input');
-//         const postLable=document.createElement('label');
-//         const postComment=document.createElement('textarea');
-//         // postComment.type="textMessage";
-//         postComment.cols="55";
-//         postComment.rows="2";
-//         postComment.textContent="Comments..";
-//         submitButton.type="submit";
-//         postForm.append(postLable);
-//         postForm.append(postComment);
-//         // newPost.append(postForm);
-//         postForm.append(submitButton);
-//         sector.append(postForm);
-
-//         // art.style.border="5px solid black";
-//         console.log(data.all[0].comments.length);
-//         for(let i = data.all[0].comments.length - 1; i >= 0; i--){
-//             const addPostComment=document.createElement('p');
-//             const line=document.createElement('br');
-//             console.log(data.all[0].comments[i]);
-//             addPostComment.textContent=data.all[0].comments[i];
-//             sector.append(addPostComment);
-//             // sector.append(line);
-//         }
-
-//         art.append(sector);
-//         sector.style.border="5px solid black";
-      
-//     })
-
-
-
-
-
-//     // const newPost=document.getElementById("newPost");
-//     // const postTitle=document.createElement('h1');
-//     // postTitle.textContent="TiTle";
-//     // newPost.append(postTitle);
-//     // console.log(postTitle);
-//     // const postGif=document.createElement('img');
-//     // postGif.src="https://media4.giphy.com/media/9A3t72abirdtyull0m/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g";
-//     // newPost.append(postGif);
-//     // postGif.style.width="240px"
-//     // // newPost.style.backgroundColor="yellow";
-//     // newPost.style.margin="20vh";
-//     // // newPost.style.marginLeft="20vh";
-//     // newPost.style.border= "5px solid black";
-
-//     // const postForm=document.createElement('form');
-//     // const submitButton=document.createElement('input');
-//     // const postLable=document.createElement('label');
-//     // const postComment=document.createElement('input');
-//     // postComment.type="textMessage";
-//     // submitButton.type="submit";
-//     // newPost.append(postComment);
-//     // postForm.append(submitButton);
-//     // newPost.append(postForm);
-    
-// });
-
-    
