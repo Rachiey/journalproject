@@ -8,6 +8,7 @@ describe('testing API', () => {
         expect(status).toBe(200);
         expect(body.length).toBeGreaterThanOrEqual(1);
     });
+    
     it('should create a new comment for post "1628778265656"', async () => {
         const { status, body } = await request
             .post('/posts/1628778265656/comments')
