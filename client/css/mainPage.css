@@ -102,6 +102,7 @@ h2 {
   font-family: 'Birthstone', cursive;
   font-size: 35px;
   padding: 10px;
+  text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
 }
 
 .filter-group {
