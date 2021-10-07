@@ -46,8 +46,6 @@ comments.addEventListener("input", (e) => {
   const maxLength = target.getAttribute("maxlength");
   let currentLength = target.value.length;
   counterPost.textContent = `${maxLength - currentLength} characters remaining`;
-// Button is enabled since textarea has text:
-//addPostButton.disabled = false;
 });
 
 
