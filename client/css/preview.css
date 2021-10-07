@@ -166,6 +166,10 @@ footer{
     font-family: 'Montserrat', sans-serif;
 }
 
+#newPost{
+    width: 50%;
+    margin-left: 25%;
+}
 
 @media only screen and (max-width: 1050px){
 
@@ -281,6 +285,11 @@ footer{
     .topnav{
         width: 110px;
     }
+
+    #newPost{
+        width: 560px;
+        margin-left: 50px;
+    }
   
 }
 
@@ -341,7 +350,46 @@ footer{
         /* background-color: cadetblue; */
     }
 
+    #newPost{
+        width: 40%;
+        margin-left: 13%;
+    }
+
   
+}
+
+
+
+@media only screen and (max-width: 620px){
+    #newPost{
+        width: 540px;
+        margin-left: 38px;
+    }
+    
+}
+
+@media only screen and (max-width: 600px){
+    #newPost{
+        width: 525px;
+        margin-left: 30px;
+    }
+    
+}
+
+@media only screen and (max-width: 570px){
+    #newPost{
+        width: 520px;
+        margin-left: 25px;
+    }
+    
+}
+
+@media only screen and (max-width: 540px){
+    #newPost{
+        width: 480px;
+        margin-left: 20px;
+    }
+    
 }
 
 
@@ -358,7 +406,23 @@ footer{
 
     .topnav a {
         font-size: 10px;       
-      }
+    }
+
+    #newPost{
+        width: 420px;
+        margin-left: 16px;
+    }
+    
+
+
+}
+
+@media only screen and (max-width: 490px){
+
+    #newPost{
+        width: 380px;
+        margin-left: 10px;
+    }
 
 }
 
@@ -368,6 +432,13 @@ footer{
         font-size: 32px;
     }
 
+    #newPost{
+        width: 320px;
+        margin-left: 5px;
+    }
+
+
+   
 }
 
 
@@ -435,7 +506,13 @@ footer{
         height: 10vh;
     
     }
-  
+
+    #newPost{
+        width: 260px;
+        margin-left: 3px;
+    }
+
+
 }
 
 
@@ -492,4 +569,5 @@ footer{
     .p{
         font-size: xx-small;
     }
+
 }

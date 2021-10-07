@@ -167,8 +167,8 @@ function getPostById(idNum){
         sector.append(newMsg);
         // art.append(sector);
 
-        art.style.width="50vw";
-        art.style.marginLeft="25vw";
+        // art.style.width="50vw";
+        // art.style.marginLeft="25vw";
         art.style.marginTop="15vh";
         newH1.style.width="calc((0.7 * 100vw)/2)";
         newImg.style.width="200px";
