@@ -31,22 +31,8 @@ body{
 }
 
 .gifImg{
-    margin-left: 30%;
+    margin-left: 33%;
 }
-/* 
-.smile{
-    margin-left: 6vw;
-    margin-right: 9vw;
-    
-}
-
-.love{
-    margin-left: 9vw;
-}
-
-.laugh{
-    margin-left: 9vw;
-} */
 
 .header img {
     position: relative;
@@ -131,10 +117,10 @@ body{
     height: 5vh;
 }
 
-.title{
-    margin-top: 2px;
-    margin-left: 15%;
-    width:  calc((0.7 * 100vw)/2);
+.heads .postTitle{
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: 22%;
     display: inline-block;
     text-align: center;
     font-size: large;
@@ -153,7 +139,7 @@ body{
 .locs{
     margin-left: 2px;
     display: inline-block;
-    width:  calc((0.3 * 100vw)/3);
+    /* width:  calc((0.3 * 100vw)/3); */
     font-size: medium;
     font-family: 'Montserrat', sans-serif;
 }

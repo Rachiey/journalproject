@@ -1,4 +1,3 @@
-
 const post_1=document.getElementById("post_1");
 const post_2=document.getElementById("post_2");
 const addPosts=document.getElementById("addPosts");
@@ -102,7 +101,7 @@ function getPostById(idNum){
 
         newImg.className="gifImg";
         newHeader.className="heads";
-        newH1.className="title";
+        newH1.className="postTitle";
         newH2.className="locs";
         sector.className="selection";
         newMsg.className="p";
@@ -147,10 +146,6 @@ function getPostById(idNum){
         postReactionSimleInput.type="submit";
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
-
-        // addPostReactionSmile.className="smile";
-        // postReactionLoveInput.className="love";
-        // postReactionLaughInput.className="laugh";
 
         postReactionSimleInput.textContent=data.reactions.smile;
         postReactionLoveInput.textContent=data.reactions.love;
