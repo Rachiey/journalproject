@@ -170,7 +170,7 @@ function getPostById(idNum){
         art.style.width="50vw";
         art.style.marginLeft="25vw";
         art.style.marginTop="15vh";
-        newH1.style.width="calc((0.6 * 100vw)/2)";
+        newH1.style.width="calc((0.7 * 100vw)/2)";
         newImg.style.width="200px";
         newImg.style.height="200px";
         newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
