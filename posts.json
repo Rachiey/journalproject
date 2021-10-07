@@ -28,6 +28,16 @@
         "gif": "https://media4.giphy.com/media/8F3bK4aq1tCo0TLkf7/giphy.gif?cid=77234f627se5msjwhx96b5h43xh1ikm2hqo0fu06iaoruky8&rid=giphy.gif&ct=g",
         "comments": ["great","well done","working"],
         "reactions": {"smile": 6, "laugh": 3, "love": 4}
+    },
+    {
+        "id": 4,
+        "title": "South of Africa",
+        "location": "France",
+        "category": "Entertainment",
+        "post": "I had a really nice holiday!",
+        "gif": "https://media1.giphy.com/media/Btn42lfKKrOzS/giphy-downsized.gif?cid=77234f62x3vl0atyu3bxe8lpjfkmvlmpwcccb4otluzyftw5&rid=giphy-downsized.gif&ct=g",
+        "comments": ["great","well done","working"],
+        "reactions": {"smile": 2, "laugh": 0, "love": 3}
     }
     
 ]
