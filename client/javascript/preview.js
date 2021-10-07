@@ -153,7 +153,7 @@ function getPostById(idNum){
         newMsg.textContent=data.post;
         newImg.src=data.gif;
 
-        newImg.className="gifs";
+        newImg.className="gifImg";
         newHeader.className="heads";
         newH1.className="titles";
         newH2.className="locs";
