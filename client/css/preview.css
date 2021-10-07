@@ -1,6 +1,6 @@
 :root {
     --articleheight: 40vh;
-    --headerheight: 15vh;
+    --headerheight: 20vh;
 }
 
 *{
@@ -9,7 +9,7 @@
 }
 
 #topHeader{
-    background-color: grey;
+    background-color: #187bcd;
 }
 
 header .topnav {
@@ -20,7 +20,7 @@ header .topnav {
 
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #03254C;
     /* height: 50px;    */
 }
 

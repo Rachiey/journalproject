@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
             sector.className="selection";
             newMsg.className="p";
 
-            sector.id=`${i}`;
-            checkIds.push(data[i].id);
+            sector.id=data[i].id;
+            checkIds.push(data[i].id); 
 
             newHeader.append(newH2);
             newHeader.append(newH1);
@@ -141,7 +141,7 @@ function getPostById(idNum){
     console.log(idNum);
     fetch(`http://localhost:3000/posts/${idNum}`)
     .then(obj => obj.json())
-    .then(data => { 
+    .then(data => {
         const newHeader=document.createElement('header');
         const newH1=document.createElement('h1');
         const newH2=document.createElement('h2');
@@ -193,7 +193,7 @@ function getPostById(idNum){
         const line=document.createElement('br');
         const addReactionsList=document.createElement('div');
         sector.append(line);
-        console.log(data.all[idNum].reactions.smile);
+        console.log(data.reactions.smile);
       
         const addPostReactionSmile=document.createElement('p');
         const addPostReactionLove=document.createElement('p');
@@ -203,11 +203,11 @@ function getPostById(idNum){
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
 
-        postReactionSimleInput.textContent=data.all[idNum].reactions.smile;
-        postReactionLoveInput.textContent=data.all[idNum].reactions.love;
-        postReactionLaughInput.textContent=data.all[idNum].reactions.laugh;
+        postReactionSimleInput.textContent=data.reactions.smile;
+        postReactionLoveInput.textContent=data.reactions.love;
+        postReactionLaughInput.textContent=data.reactions.laugh;
         
-        console.log(data.all[idNum].reactions);
+        console.log(data.reactions);
         addPostReactionSmile.innerHTML=`&#128522;  `;
         addReactionsList.append(addPostReactionSmile);
         addReactionsList.append(postReactionSimleInput);
@@ -267,11 +267,11 @@ function getPostById(idNum){
         })
 
 
-        console.log(data.all[idNum].comments.length);
-        for(let i = 0; i < data.all[idNum].comments.length ; i++){
+        console.log(data.comments.length);
+        for(let i = 0; i < data.comments.length ; i++){
             const addPostComment=document.createElement('p');           
             // console.log(data.all[idNum].comments[i]);
-            addPostComment.textContent=data.all[idNum].comments[i];
+            addPostComment.textContent=data.comments[i];
             sector.append(addPostComment);
         }
        
