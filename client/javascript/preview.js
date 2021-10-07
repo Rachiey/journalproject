@@ -53,7 +53,7 @@ const posts="posts";
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:3000/${posts}`)
+    fetch(`https://journalblogproject.herokuapp.com/${posts}`)
     .then(obj => obj.json())
     .then(data => setValues(data.all))
 
@@ -142,7 +142,7 @@ console.log(checkIds);
 function getPostById(idNum){
     console.log(typeof(idNum));    
     console.log(idNum);
-    fetch(`http://localhost:3000/posts/${idNum}`)
+    fetch(`https://journalblogproject.herokuapp.com/posts/${idNum}`)
     .then(obj => obj.json())
     .then(data => {
         const CommentsArr=[]; 
@@ -246,7 +246,7 @@ function getPostById(idNum){
                 },
                 body: JSON.stringify(data),
             };
-            fetch(`http://localhost:3000/posts/reactions/${idNum}`, options)
+            fetch(`https://journalblogproject.herokuapp.com/posts/reactions/${idNum}`, options)
                 .then(console.log("New reaction added"))
                 .catch(err => console.warn("Oops, something went wrong."))
         };
@@ -300,8 +300,8 @@ function getPostById(idNum){
                     },
                     body: JSON.stringify(data)
                 }
-                console.log(`http://localhost:3000/posts/comments/${idNum}`);
-                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
+                console.log(`https://journalblogproject.herokuapp.com/posts/comments/${idNum}`);
+                fetch(`https://journalblogproject.herokuapp.com/posts/comments/${idNum}`, options)
                     .then(console.log("New comment added"))
                     .then(addTheComments(parseInt(idNum),postComment.value))
                     .then(postComment.value="")

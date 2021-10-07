@@ -80,7 +80,7 @@ function submitPost(e) {
     },
     body: JSON.stringify(data)
   }
-  fetch('http://localhost:3000/posts', options)
+  fetch('https://journalblogproject.herokuapp.com/posts', options)
     .then(console.log("New post added"))
     .catch(err => console.warn('Oops, something went wrong.'))
   };
