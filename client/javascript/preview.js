@@ -53,7 +53,7 @@ const posts="posts";
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
 
-    fetch(`https://journalblogproject.herokuapp.com/${posts}`)
+    fetch(`http://localhost:3000/${posts}`)
     .then(obj => obj.json())
     .then(data => setValues(data.all))
 
@@ -78,11 +78,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
             newH2.className="locs";
             sector.className="selection";
             newMsg.className="p";
-
-            sector.id=data[i].id;
-            // checkIds.push(sector.id);
-            checkIds.push(data[i].id);
-
+            sector.id=`${i}`;
+            checkIds.push(sector.id);
+            selectPostID.push(data[i].id);
             console.log(checkIds);
 
             newHeader.append(newH2);
@@ -139,10 +137,10 @@ console.log(checkIds);
 // });
 
 
-function getPostById(idNum){
+function getPostById(idNum,numberOfId){
     console.log(typeof(idNum));    
     console.log(idNum);
-    fetch(`https://journalblogproject.herokuapp.com/posts/${idNum}`)
+    fetch(`http://localhost:3000/${posts}`)
     .then(obj => obj.json())
     .then(data => {
         const CommentsArr=[]; 
@@ -152,10 +150,10 @@ function getPostById(idNum){
         const newImg=document.createElement('img');
         const newMsg=document.createElement('p');
 
-        newH1.textContent=data.title;
-        newH2.textContent=data.location;
-        newMsg.textContent=data.post;
-        newImg.src=data.gif;
+        newH1.textContent=data.all[idNum].title;
+        newH2.textContent=data.all[idNum].location;
+        newMsg.textContent=data.all[idNum].post;
+        newImg.src=data.all[idNum].gif;
 
         newImg.className="gifs";
         newHeader.className="heads";
@@ -197,7 +195,7 @@ function getPostById(idNum){
         const line=document.createElement('br');
         const addReactionsList=document.createElement('div');
         sector.append(line);
-        console.log(data.reactions.smile);
+        console.log(data.all[idNum].reactions.smile);
       
         const addPostReactionSmile=document.createElement('p');
         const addPostReactionLove=document.createElement('p');
@@ -207,11 +205,11 @@ function getPostById(idNum){
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
 
-        postReactionSimleInput.textContent=data.reactions.smile;
-        postReactionLoveInput.textContent=data.reactions.love;
-        postReactionLaughInput.textContent=data.reactions.laugh;
+        postReactionSimleInput.textContent=data.all[idNum].reactions.smile;
+        postReactionLoveInput.textContent=data.all[idNum].reactions.love;
+        postReactionLaughInput.textContent=data.all[idNum].reactions.laugh;
         
-        console.log(data.reactions);
+        console.log(data.all[idNum].reactions);
         addPostReactionSmile.innerHTML=`&#128522;  `;
         addReactionsList.append(addPostReactionSmile);
         addReactionsList.append(postReactionSimleInput);
@@ -246,7 +244,7 @@ function getPostById(idNum){
                 },
                 body: JSON.stringify(data),
             };
-            fetch(`https://journalblogproject.herokuapp.com/posts/reactions/${idNum}`, options)
+            fetch(`http://localhost:3000/posts/reactions/${idNum}`, options)
                 .then(console.log("New reaction added"))
                 .catch(err => console.warn("Oops, something went wrong."))
         };
@@ -271,11 +269,11 @@ function getPostById(idNum){
         })
 
 
-        console.log(data.comments.length);
-        for(let i = 0; i < data.comments.length ; i++){
+        console.log(data.all[idNum].comments.length);
+        for(let i = 0; i < data.all[idNum].comments.length ; i++){
             const addPostComment=document.createElement('p');           
-            // console.log(data.comments[i]);
-            addPostComment.textContent=data.comments[i];
+            // console.log(data.all[idNum].comments[i]);
+            addPostComment.textContent=data.all[idNum].comments[i];
             sector.append(addPostComment);
         }
        
@@ -300,8 +298,8 @@ function getPostById(idNum){
                     },
                     body: JSON.stringify(data)
                 }
-                console.log(`https://journalblogproject.herokuapp.com/posts/comments/${idNum}`);
-                fetch(`https://journalblogproject.herokuapp.com/posts/comments/${idNum}`, options)
+                console.log(`http://localhost:3000/posts/comments/${numberOfId}`);
+                fetch(`http://localhost:3000/posts/comments/${numberOfId}`, options)
                     .then(console.log("New comment added"))
                     .then(addTheComments(parseInt(idNum),postComment.value))
                     .then(postComment.value="")
