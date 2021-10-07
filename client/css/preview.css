@@ -75,6 +75,10 @@ header .topnav {
     margin-left: 20px;
 }
 
+.selection{
+    background-color: white;
+}
+
 
 #logo{
     width: 40px;
@@ -476,5 +480,16 @@ footer{
         width: 8px;
     }
 
+    .titles{
+        width:calc(0.7 * 100vw);
+        font-size: smaller;
+    }
 
+    .locs{
+        font-size:xx-small;
+    }
+
+    .p{
+        font-size: xx-small;
+    }
 }
