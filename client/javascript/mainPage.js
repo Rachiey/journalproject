@@ -86,6 +86,5 @@ function submitPost(e) {
   };
 
 submitButton.addEventListener('click', e => {
-  e.preventDefault();
   submitPost(e);
 });
