@@ -88,3 +88,12 @@ function submitPost(e) {
 submitButton.addEventListener('click', e => {
   submitPost(e);
 });
+
+function expansion() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " expanded";
+  } else {
+    x.className = "topnav";
+  }
+}
