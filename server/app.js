@@ -59,6 +59,19 @@ app.get("/posts/reactions/:id", (req, res) => {
     }   
 });
 
+//gets posts based on category
+app.get("/:word", (req, res) => {
+    try {
+        const word =req.params.word.toLowerCase();
+        const matchedPosts = Post.all.filter(post => (post.category.toLowerCase()===word));
+        res.send({all :matchedPosts});
+    }
+    catch(err) {
+        res.statusCode = 404;
+        res.send(err.message)
+    }   
+});
+
 
 //POST
 //adds new post
@@ -112,20 +125,6 @@ app.put("/posts/reactions/:id", (req, res) => {
         res.send(err.message);
     }
 })
-
-
-
-app.get("/:word", (req, res) => {
-    try {
-        const word =req.params.word.toLowerCase();
-        const matchedPosts = Post.all.filter(post => (post.category.toLowerCase()===word));
-        res.send({all :matchedPosts});
-    }
-    catch(err) {
-        res.statusCode = 404;
-        res.send(err.message)
-    }   
-});
 
 
 module.exports = app;

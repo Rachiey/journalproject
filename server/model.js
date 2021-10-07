@@ -45,9 +45,7 @@ class Post {
     //add a new reaction
     static addNewReaction(id, targetReaction) {
         const targetPost = Post.getPost(id);
-        console.log(targetPost);
         targetPost.reactions[targetReaction]++;
-        console.log(targetPost);
     }
 };
 
