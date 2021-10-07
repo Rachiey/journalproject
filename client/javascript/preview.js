@@ -1,9 +1,7 @@
-
 const post_1=document.getElementById("post_1");
 const post_2=document.getElementById("post_2");
 const addPosts=document.getElementById("addPosts");
 const classOverview=document.getElementById("classOverview");
-
 const postReactionForm=document.createElement('form');
 const postReactionSimleInput=document.createElement('button');
 const postReactionLoveInput=document.createElement('button');
@@ -14,8 +12,8 @@ const sector=document.createElement('section');
 const submitButton=document.createElement('button');
 const postLable=document.createElement('label');
 const postComment=document.createElement('textarea');
-const line=document.createElement('br');
 
+const line=document.createElement('br');
 
 submitButton.className="submitButton";
 
@@ -24,14 +22,14 @@ const selectPostID=[];
 
 const posts="entertainment";
 
+const checkIds=[];
+const selectPostID=[];
 
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
-
     fetch(`http://localhost:3000/${posts}`)
     .then(obj => obj.json())
     .then(data => setValues(data.all))
-
     function setValues(data){
         for (let i = data.length - 1; i >= 0; i--) {
             const art=document.getElementById('addPosts');
@@ -45,7 +43,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
             newH2.textContent=data[i].location;
             newMsg.textContent=data[i].post;
             newImg.src=data[i].gif;
-
             newImg.className="gifs";
             newHeader.className="heads";
             newH1.className="titles";
@@ -61,11 +58,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
             sector.append(newHeader);
             sector.append(newImg);
             sector.append(newMsg);
-            art.append(sector);   
+            art.append(sector);
         }
         setID(checkIds)
     }
-
 
     function setID(checkIds){
         for (let i =0 ; checkIds.length > i;  i++) {
@@ -76,11 +72,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 getPostById(checkIds[i],selectPostID[i]);
         })
         }
-
     }
-
-    
 });
+
 
 
 function getPostById(idNum){
@@ -94,19 +88,18 @@ function getPostById(idNum){
         const newH2=document.createElement('h2');
         const newImg=document.createElement('img');
         const newMsg=document.createElement('p');
-
         newH1.textContent=data.title;
         newH2.textContent=data.location;
         newMsg.textContent=data.post;
         newImg.src=data.gif;
 
         newImg.className="gifImg";
+
         newHeader.className="heads";
         newH1.className="title";
         newH2.className="locs";
         sector.className="selection";
         newMsg.className="p";
-
         newHeader.append(newH2);
         newHeader.append(newH1);
         sector.append(newHeader);
@@ -116,7 +109,15 @@ function getPostById(idNum){
         art.style.marginTop="12vh";
         newImg.style.width="200px";
         newImg.style.height="200px";
- 
+
+        art.style.width="50vw";
+        art.style.marginLeft="25vw";
+        art.style.marginTop="15vh";
+        newH1.style.width="calc((0.6 * 100vw)/2)";
+        newImg.style.width="200px";
+        newImg.style.height="200px";
+        newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
+
         postComment.cols="55";
         postComment.rows="2";
         postComment.placeholder="Comments..";
@@ -129,28 +130,25 @@ function getPostById(idNum){
         newMsg.style.marginBottom="8px";
         newMsg.style.marginTop="8px";
         
+
         postForm.append(postLable);
         postForm.append(postComment);
         postForm.append(line);
         postForm.append(submitButton);
         sector.append(postForm);
 
+        const line=document.createElement('br');
 
         const addReactionsList=document.createElement('div');
         sector.append(line);
         console.log(data.reactions.smile);
-      
         const addPostReactionSmile=document.createElement('p');
         const addPostReactionLove=document.createElement('p');
         const addPostReactionLaugh=document.createElement('p');
-
         postReactionSimleInput.type="submit";
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
 
-        // addPostReactionSmile.className="smile";
-        // postReactionLoveInput.className="love";
-        // postReactionLaughInput.className="laugh";
 
         postReactionSimleInput.textContent=data.reactions.smile;
         postReactionLoveInput.textContent=data.reactions.love;
@@ -159,26 +157,27 @@ function getPostById(idNum){
         addPostReactionSmile.innerHTML=`&#128522;  `;
         addReactionsList.append(addPostReactionSmile);
         addReactionsList.append(postReactionSimleInput);
-
         addPostReactionLove.innerHTML=`&#128525;  `;
         addReactionsList.append(addPostReactionLove);
         addReactionsList.append(postReactionLoveInput);
-
         addPostReactionLaugh.innerHTML=`&#128514;  `;
         addReactionsList.append(addPostReactionLaugh);
         addReactionsList.append(postReactionLaughInput);
-
         addPostReactionSmile.style.display="inline-block";
         addPostReactionLove.style.display="inline-block";
         addPostReactionLaugh.style.display="inline-block";
+
 
         addPostReactionSmile.style.marginLeft="4vw";
         postReactionSimleInput.style.marginRight="7vw";
         postReactionLoveInput.style.marginRight="7vw";
 
+        addPostReactionSmile.style.marginLeft="6vw";
+        postReactionSimleInput.style.marginRight="9vw";
+        postReactionLoveInput.style.marginRight="9vw";
+
         sector.append(addReactionsList);
         sector.append(line);
-
         function addReaction(e, reactionType) {
             const data = {
                 reaction : reactionType,
@@ -194,20 +193,16 @@ function getPostById(idNum){
                 .then(console.log("New reaction added"))
                 .catch(err => console.warn("Oops, something went wrong."))
         };
-
-
         postReactionSimleInput.addEventListener('click', (e) => {
             e.preventDefault();
             addReaction(e, "smile");
             postReactionSimleInput.textContent =   1 + parseInt(postReactionSimleInput.textContent);
         })
-        
         postReactionLoveInput.addEventListener('click', (e) => {
             e.preventDefault();
             addReaction(e, "love")
             postReactionLoveInput.textContent =   1 + parseInt(postReactionLoveInput.textContent);
         })
-        
         postReactionLaughInput.addEventListener('click', (e) => {
             e.preventDefault();
             addReaction(e, "laugh")
@@ -223,12 +218,9 @@ function getPostById(idNum){
             addPostComment.style.paddingLeft="20px";
             sector.append(addPostComment);
         }
-       
-
         submitButton.addEventListener('click', (e) => {
             e.preventDefault();
             submitComment(e);
-        
             function submitComment(e) {
                 const data = {
                     comment: postComment.value,
@@ -252,13 +244,13 @@ function getPostById(idNum){
                     .catch(err => console.warn("Oops, something went wrong."))
             };
         });
-
         art.append(sector);
+      
         sector.style.border="5px solid #a9cfe2";
       
     })
-
 }
+
 
 function expansion() {
     var x = document.getElementById("myTopnav");
@@ -271,10 +263,9 @@ function expansion() {
 
 
 function addTheComments(idNum,value){
-    const addNewComment=document.createElement('p');       
+    const addNewComment=document.createElement('p');
     addNewComment.textContent=value;
     addNewComment.style.fontFamily="'Montserrat', sans-serif";
     addNewComment.style.paddingLeft="20px";
     sector.append(addNewComment);
 }
-
