@@ -58,4 +58,4 @@ describe('entertainment.html', () => {
             expect(navbar).toBeTruthy;
         })
     })
-})
+});

@@ -60,5 +60,3 @@ The TravelShare website is hosted [here](https://bagels-journal-project.netlify.
  - We would like to add an 'About us' page to the website to tell users more about TravelShare.
  - Make the comments sections more detailed with additional styling.
  - Allow users to choose their gif rather than being given a random one based on their search.
-
- 
