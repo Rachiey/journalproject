@@ -3,6 +3,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url("https://media.istockphoto.com/vectors/paper-planes-seamless-background-vector-id532849155?k=20&m=532849155&s=612x612&w=0&h=e-urSEg_qa_CV0ODiCpr9fu_V1Nwqu8khkeGCywzZgE=");
   background-color: #d0efff;
   font-family: 'Montserrat', sans-serif;
 }
