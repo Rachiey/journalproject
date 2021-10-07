@@ -122,6 +122,11 @@ form {
   margin-bottom: 10px;
 }
 
+#journalsubmit {
+  display:inline;
+  margin: 10px;
+}
+
 #charCounterPost {
   text-align: center;
   margin-left: 350px;
