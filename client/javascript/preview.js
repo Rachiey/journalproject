@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             newMsg.className="p";
             sector.id=`${i}`;
             checkIds.push(sector.id);
-            selectPostID.push(data[i].id);
+           // selectPostID.push(data[i].id);
             console.log(checkIds);
 
             newHeader.append(newH2);
@@ -137,23 +137,22 @@ console.log(checkIds);
 // });
 
 
-function getPostById(idNum,numberOfId){
+function getPostById(idNum){
     console.log(typeof(idNum));    
     console.log(idNum);
-    fetch(`http://localhost:3000/${posts}`)
+    fetch(`http://localhost:3000/posts/${idNum}`)
     .then(obj => obj.json())
     .then(data => {
-        const CommentsArr=[]; 
         const newHeader=document.createElement('header');
         const newH1=document.createElement('h1');
         const newH2=document.createElement('h2');
         const newImg=document.createElement('img');
         const newMsg=document.createElement('p');
 
-        newH1.textContent=data.all[idNum].title;
-        newH2.textContent=data.all[idNum].location;
-        newMsg.textContent=data.all[idNum].post;
-        newImg.src=data.all[idNum].gif;
+        newH1.textContent=data.title;
+        newH2.textContent=data.location;
+        newMsg.textContent=data.post;
+        newImg.src=data.gif;
 
         newImg.className="gifs";
         newHeader.className="heads";
@@ -298,8 +297,8 @@ function getPostById(idNum,numberOfId){
                     },
                     body: JSON.stringify(data)
                 }
-                console.log(`http://localhost:3000/posts/comments/${numberOfId}`);
-                fetch(`http://localhost:3000/posts/comments/${numberOfId}`, options)
+                console.log(`http://localhost:3000/posts/comments/${idNum}`);
+                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
                     .then(console.log("New comment added"))
                     .then(addTheComments(parseInt(idNum),postComment.value))
                     .then(postComment.value="")
