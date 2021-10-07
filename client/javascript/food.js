@@ -9,16 +9,21 @@ const postReactionSimleInput=document.createElement('button');
 const postReactionLoveInput=document.createElement('button');
 const postReactionLaughInput=document.createElement('button');
 const postForm=document.createElement('form');
-const art=document.getElementById('newPost');
+const art=document.getElementById('newPosts');
 const sector=document.createElement('section');
 const submitButton=document.createElement('button');
 const postLable=document.createElement('label');
 const postComment=document.createElement('textarea');
+const line=document.createElement('br');
+
+
+submitButton.className="submitButton";
 
 const checkIds=[];
 const selectPostID=[];
 
 const posts="Food and Drink";
+
 
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
@@ -28,7 +33,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     .then(data => setValues(data.all))
 
     function setValues(data){
-        // console.log(data[1].post);
         for (let i = data.length - 1; i >= 0; i--) {
             const art=document.getElementById('addPosts');
             const sector=document.createElement('section');
@@ -48,10 +52,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
             newH2.className="locs";
             sector.className="selection";
             newMsg.className="p";
-            sector.id=`${i}`;
-            checkIds.push(sector.id);
-            selectPostID.push(data[i].id);
-            console.log(checkIds);
+
+            sector.id=data[i].id;
+            checkIds.push(data[i].id); 
 
             newHeader.append(newH2);
             newHeader.append(newH1);
@@ -63,9 +66,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
         setID(checkIds)
     }
 
+
     function setID(checkIds){
         for (let i =0 ; checkIds.length > i;  i++) {
-            // var idNum=`${i}`;
             const getIdNum=document.getElementById(checkIds[i]);
             getIdNum.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -79,31 +82,27 @@ document.addEventListener('DOMContentLoaded', (e) => {
     
 });
 
-console.log(checkIds);
 
-
-
-function getPostById(idNum,numberOfId){
+function getPostById(idNum){
     console.log(typeof(idNum));    
     console.log(idNum);
-    fetch(`http://localhost:3000/${posts}`)
+    fetch(`http://localhost:3000/posts/${idNum}`)
     .then(obj => obj.json())
     .then(data => {
-        const CommentsArr=[]; 
         const newHeader=document.createElement('header');
         const newH1=document.createElement('h1');
         const newH2=document.createElement('h2');
         const newImg=document.createElement('img');
         const newMsg=document.createElement('p');
 
-        newH1.textContent=data.all[idNum].title;
-        newH2.textContent=data.all[idNum].location;
-        newMsg.textContent=data.all[idNum].post;
-        newImg.src=data.all[idNum].gif;
+        newH1.textContent=data.title;
+        newH2.textContent=data.location;
+        newMsg.textContent=data.post;
+        newImg.src=data.gif;
 
-        newImg.className="gifs";
+        newImg.className="gifImg";
         newHeader.className="heads";
-        newH1.className="titles";
+        newH1.className="title";
         newH2.className="locs";
         sector.className="selection";
         newMsg.className="p";
@@ -113,35 +112,33 @@ function getPostById(idNum,numberOfId){
         sector.append(newHeader);
         sector.append(newImg);
         sector.append(newMsg);
-        // art.append(sector);
 
-        art.style.width="50vw";
-        art.style.marginLeft="25vw";
-        art.style.marginTop="15vh";
-        newH1.style.width="calc((0.6 * 100vw)/2)";
+        art.style.marginTop="12vh";
         newImg.style.width="200px";
         newImg.style.height="200px";
-        newImg.style.marginLeft="calc((calc(100vw/2) - 200px)/2)";
-
-        
+ 
         postComment.cols="55";
         postComment.rows="2";
         postComment.placeholder="Comments..";
-        submitButton .type="submit";
+        submitButton.type="submit";
         submitButton.textContent="Comment";
+        newMsg.style.fontFamily="'Montserrat', sans-serif";
+        newMsg.style.fontSize="20px";
+        newH1.style.fontSize="20px";
+        newH1.style.marginBottom="8px";
+        newMsg.style.marginBottom="8px";
+        newMsg.style.marginTop="8px";
         
         postForm.append(postLable);
         postForm.append(postComment);
-        // newPost.append(postForm);
+        postForm.append(line);
         postForm.append(submitButton);
         sector.append(postForm);
 
 
-
-        const line=document.createElement('br');
         const addReactionsList=document.createElement('div');
         sector.append(line);
-        console.log(data.all[idNum].reactions.smile);
+        console.log(data.reactions.smile);
       
         const addPostReactionSmile=document.createElement('p');
         const addPostReactionLove=document.createElement('p');
@@ -151,11 +148,14 @@ function getPostById(idNum,numberOfId){
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
 
-        postReactionSimleInput.textContent=data.all[idNum].reactions.smile;
-        postReactionLoveInput.textContent=data.all[idNum].reactions.love;
-        postReactionLaughInput.textContent=data.all[idNum].reactions.laugh;
+        // addPostReactionSmile.className="smile";
+        // postReactionLoveInput.className="love";
+        // postReactionLaughInput.className="laugh";
+
+        postReactionSimleInput.textContent=data.reactions.smile;
+        postReactionLoveInput.textContent=data.reactions.love;
+        postReactionLaughInput.textContent=data.reactions.laugh;
         
-        console.log(data.all[idNum].reactions);
         addPostReactionSmile.innerHTML=`&#128522;  `;
         addReactionsList.append(addPostReactionSmile);
         addReactionsList.append(postReactionSimleInput);
@@ -172,9 +172,9 @@ function getPostById(idNum,numberOfId){
         addPostReactionLove.style.display="inline-block";
         addPostReactionLaugh.style.display="inline-block";
 
-        addPostReactionSmile.style.marginLeft="6vw";
-        postReactionSimleInput.style.marginRight="9vw";
-        postReactionLoveInput.style.marginRight="9vw";
+        addPostReactionSmile.style.marginLeft="4vw";
+        postReactionSimleInput.style.marginRight="7vw";
+        postReactionLoveInput.style.marginRight="7vw";
 
         sector.append(addReactionsList);
         sector.append(line);
@@ -215,11 +215,12 @@ function getPostById(idNum,numberOfId){
         })
 
 
-        console.log(data.all[idNum].comments.length);
-        for(let i = 0; i < data.all[idNum].comments.length ; i++){
+        console.log(data.comments.length);
+        for(let i = 0; i < data.comments.length ; i++){
             const addPostComment=document.createElement('p');           
-            // console.log(data.all[idNum].comments[i]);
-            addPostComment.textContent=data.all[idNum].comments[i];
+            addPostComment.textContent=data.comments[i];
+            addPostComment.style.fontFamily="'Montserrat', sans-serif";
+            addPostComment.style.paddingLeft="20px";
             sector.append(addPostComment);
         }
        
@@ -232,8 +233,7 @@ function getPostById(idNum,numberOfId){
                 const data = {
                     comment: postComment.value,
                 };
-                
-                //if the user doesn't write anything, don't post anything
+
                 if(data.comment === "") {
                     return;
                 }
@@ -244,8 +244,8 @@ function getPostById(idNum,numberOfId){
                     },
                     body: JSON.stringify(data)
                 }
-                console.log(`http://localhost:3000/posts/comments/${numberOfId}`);
-                fetch(`http://localhost:3000/posts/comments/${numberOfId}`, options)
+                console.log(`http://localhost:3000/posts/comments/${idNum}`);
+                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
                     .then(console.log("New comment added"))
                     .then(addTheComments(parseInt(idNum),postComment.value))
                     .then(postComment.value="")
@@ -254,19 +254,27 @@ function getPostById(idNum,numberOfId){
         });
 
         art.append(sector);
-        sector.style.border="5px solid black";
+        sector.style.border="5px solid #a9cfe2";
       
     })
 
 }
 
-
+function expansion() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " expanded";
+    } else {
+      x.className = "topnav";
+    }
+  }
 
 
 function addTheComments(idNum,value){
     const addNewComment=document.createElement('p');       
     addNewComment.textContent=value;
+    addNewComment.style.fontFamily="'Montserrat', sans-serif";
+    addNewComment.style.paddingLeft="20px";
     sector.append(addNewComment);
 }
-
 
