@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
             newH2.className="locs";
             sector.className="selection";
             newMsg.className="p";
-            sector.id=`${i}`;
-            checkIds.push(sector.id);
-            selectPostID.push(data[i].id);
-            console.log(checkIds);
+
+            sector.id=data[i].id;
+            checkIds.push(data[i].id); 
+
             newHeader.append(newH2);
             newHeader.append(newH1);
             sector.append(newHeader);
@@ -108,8 +108,10 @@ console.log(checkIds);
 //         }
 //     }
 // });
+
+
 function getPostById(idNum){
-    console.log(typeof(idNum));
+    console.log(typeof(idNum));    
     console.log(idNum);
     fetch(`http://localhost:3000/posts/${idNum}`)
     .then(obj => obj.json())
@@ -162,9 +164,11 @@ function getPostById(idNum){
         postReactionSimleInput.type="submit";
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
+
         postReactionSimleInput.textContent=data.reactions.smile;
         postReactionLoveInput.textContent=data.reactions.love;
         postReactionLaughInput.textContent=data.reactions.laugh;
+        
         console.log(data.reactions);
         addPostReactionSmile.innerHTML=`&#128522;  `;
         addReactionsList.append(addPostReactionSmile);
@@ -213,9 +217,11 @@ function getPostById(idNum){
             addReaction(e, "laugh")
             postReactionLaughInput.textContent =   1 + parseInt(postReactionLaughInput.textContent);
         })
+
+
         console.log(data.comments.length);
         for(let i = 0; i < data.comments.length ; i++){
-            const addPostComment=document.createElement('p');
+            const addPostComment=document.createElement('p');           
             // console.log(data.all[idNum].comments[i]);
             addPostComment.textContent=data.comments[i];
             sector.append(addPostComment);
