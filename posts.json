@@ -1,43 +1,62 @@
 [
     {
         "id": 1,
-        "title": "South of France",
-        "location": "France",
+        "title": "A Wicked Show!",
+        "location": "New York",
         "category": "Entertainment",
-        "post": "I had a really nice holiday!",
-        "gif": "https://media1.giphy.com/media/Btn42lfKKrOzS/giphy-downsized.gif?cid=77234f62x3vl0atyu3bxe8lpjfkmvlmpwcccb4otluzyftw5&rid=giphy-downsized.gif&ct=g",
-        "comments": ["great","well done","working"],
-        "reactions": {"smile": 2, "laugh": 0, "love": 3}
+        "post": "Recently went to see Wicked on broadway. What a great show! A definite must see if you are in New York.",
+        "gif": "https://media4.giphy.com/media/2UET7YOyPAn1nOXbaY/giphy.gif?cid=ecf05e477o9xovqxd1symtbwq71vq8tmh1jduzuwbhb0anbb&rid=giphy.gif&ct=g",
+        "comments": ["I would love to see this!", "So jealous."],
+        "reactions": {"smile": 5, "laugh": 2, "love": 4}
     },
     {
         "id": 2,
         "title": "Sightseeing in London",
         "location": "London",
         "category": "Sightseeing",
-        "post": "The sights were great!",
-        "gif": "https://media3.giphy.com/media/9F2VWRiJypeBq/giphy.gif?cid=77234f62e5wzz9gac4a9fcnw6mcqi7t9i51c57ni4fc9resf&rid=giphy.gif&ct=g",
-        "comments": ["great","well done","working"],
-        "reactions": {"smile": 4, "laugh": 1, "love": 5}
+        "post": "There are so many sights to see in London. I had such a great time there! What does everyone think is the best sight to see in London?",
+        "gif": "https://media2.giphy.com/media/jRHOfOfg4vCYkX7sFE/giphy.gif?cid=ecf05e47veg3ktjht69h9nf4gzvhje3n7tzxjk6waunfnrkr&rid=giphy.gif&ct=g",
+        "comments": ["Definitely Buckingham Palace.", "I loved the London Eye!"],
+        "reactions": {"smile": 6, "laugh": 1, "love": 5}
     },
     {
         "id": 3,
-        "title": "German Food",
-        "location": "Germany",
+        "title": "The Best Pizza Ever",
+        "location": "Rome",
         "category": "Food and Drink",
-        "post": "The food here was delicious!",
-        "gif": "https://media4.giphy.com/media/8F3bK4aq1tCo0TLkf7/giphy.gif?cid=77234f627se5msjwhx96b5h43xh1ikm2hqo0fu06iaoruky8&rid=giphy.gif&ct=g",
-        "comments": ["great","well done","working"],
-        "reactions": {"smile": 6, "laugh": 3, "love": 4}
+        "post": "Just had some pizza from a small restaurant near the colosseum. Hands down the best pizza I ever had!",
+        "gif": "https://media3.giphy.com/media/4ayiIWaq2VULC/giphy.gif?cid=ecf05e47zoup620oskj3gvkgyznfpirgjr4uilkd20f9rar7&rid=giphy.gif&ct=g",
+        "comments": ["Ooh that looks good."],
+        "reactions": {"smile": 3, "laugh": 3, "love": 8}
     },
     {
         "id": 4,
-        "title": "South of Africa",
-        "location": "France",
+        "title": "Believe in Magic!",
+        "location": "Disneyland Paris",
         "category": "Entertainment",
-        "post": "I had a really nice holiday!",
-        "gif": "https://media1.giphy.com/media/Btn42lfKKrOzS/giphy-downsized.gif?cid=77234f62x3vl0atyu3bxe8lpjfkmvlmpwcccb4otluzyftw5&rid=giphy-downsized.gif&ct=g",
-        "comments": ["great","well done","working"],
-        "reactions": {"smile": 2, "laugh": 0, "love": 3}
+        "post": "Everybody loves Disneyland! Everything there looks great for Halloween. I would definitely recommend going this time of year!",
+        "gif": "https://media0.giphy.com/media/4HrFB9DeAGcqM7WVdx/giphy.gif?cid=ecf05e47xptbnxy2yvxoqzkjxsnujogfspo3w8tmfc5ilwn1&rid=giphy.gif&ct=g",
+        "comments": ["I would love to go here for halloween!", "Sounds great."],
+        "reactions": {"smile": 7, "laugh": 2, "love": 5}
+    },
+    {
+        "id": 5,
+        "title": "The Pyramids",
+        "location": "Egypt",
+        "category": "Sightseeing",
+        "post": "How amazing are the Pyramids of Giza?! Who else has seen them?",
+        "gif": "https://media0.giphy.com/media/45odX3D5wNaEg/giphy.gif?cid=ecf05e4707drh1xbr0dxm3ra7qhjb1omfpn26azkr6wkxi2d&rid=giphy.gif&ct=g",
+        "comments": ["I saw them last year, it was a great trip!", "They are on my bucket list!"],
+        "reactions": {"smile": 8, "laugh": 1, "love": 3}
+    },
+    {
+        "id": 6,
+        "title": "The Best Restaurant in the World?",
+        "location": "Barcelona",
+        "category": "Food and Drink",
+        "post": "If anybody loves Tapas, then you have to go to Casa de Tapas in Barcelona! The food was amazing.",
+        "gif": "https://media1.giphy.com/media/3oKIP5bAoKJFJNOkgM/giphy.gif?cid=ecf05e47t9tl8m0bfy0mk8kerqkz2hyw0bnnqtnttwersdrw&rid=giphy.gif&ct=g",
+        "comments": ["I want to go here!", "I love Tapas.","Great recommendation!"],
+        "reactions": {"smile": 9, "laugh": 1, "love": 4}
     }
-    
 ]

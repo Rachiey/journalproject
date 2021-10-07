@@ -32,15 +32,15 @@ describe('entertainment.html', () => {
             expect(src).toBeTruthy();
         });
 
-        // test('the page has a favicon element', () => {
-    //     let iconLink = document.querySelector('link[rel="icon"]');
-    //     expect(iconLink).toBeTruthy()
-    // });
+        test('the page has a favicon element', () => {
+            let iconLink = document.querySelector('link[rel="icon"]');
+            expect(iconLink).toBeTruthy()
+        });
 
-    // test('the favicon link is present', () => {
-    //     let iconLink = document.querySelector('link[rel="icon"]');
-    //     expect(iconLink.getAttribute("href")).not.toEqual('#') 
-    // });
+        test('the favicon link is present', () => {
+            let iconLink = document.querySelector('link[rel="icon"]');
+            expect(iconLink.getAttribute("href")).not.toEqual('#') 
+        });
     })
 
     describe('body', () => {
@@ -50,7 +50,7 @@ describe('entertainment.html', () => {
 
         test('it has a title', () => {
             let title = document.querySelector('h1');
-            expect(title.textContent).toContain('Travel Journal Website');
+            expect(title.textContent).toContain('TravelShare');
         })
 
         test('it has a navbar', () => {

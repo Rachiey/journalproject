@@ -20,7 +20,6 @@ describe('testing API', () => {
         expect(status).toBe(200);
     });
 
-
     it('should return an out of index error for comments', async () => {
         const { status } = await request.get('/posts/comments/17459834785934875');
         expect(status).toBe(404);
