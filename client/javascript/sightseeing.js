@@ -22,7 +22,7 @@ submitButton.className="submitButton";
 const checkIds=[];
 const selectPostID=[];
 
-const posts="Food and Drink";
+const posts="Sightseeing";
 
 
 document.addEventListener('DOMContentLoaded', (e) => {
