@@ -107,30 +107,30 @@ h2 {
   font-size: 35px;
 }
 
-  textarea {
-      resize: both; 
-      height: 250px;
-      width: 500px;
-  }
+.filter-group {
+  margin: 10px;
+}
 
-  form {
-      margin-bottom: 10px;
-  }
+textarea {
+  resize: both; 
+  height: 250px;
+  width: 500px;
+  margin: 10px;
+}
 
-
-
-footer {
-    background-color: #187bcd;
-    padding: 5px;
-    margin-top: auto;
-    height: 60px;
+form {
+  margin-bottom: 10px;
 }
 
 #charCounterPost {
   text-align: center;
   margin-left: 350px;
   padding: 3px;
-};
-
-
-
+}
+  
+footer {
+  background-color: #187bcd;
+  padding: 5px;
+  margin-top: auto;
+  height: 60px;
+}
