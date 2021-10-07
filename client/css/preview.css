@@ -75,25 +75,16 @@ header .topnav {
     margin-left: 20px;
 }
 
-/* .header h1 {
-    position: relative;
-    font-size: 50px;
-    top: 15px;
-    left: 40px;
-    color: black;
-} */
-
-
 
 #logo{
-    width: 70px;
+    width: 40px;
     /* background-color: cadetblue; */
 }
 
 #pageName{
     /* width: 50vw; */
     font-family: 'Birthstone', cursive;
-    margin-left: 70px;
+    margin-left: 30px;
     margin-right: 150px;
     text-align: center;
     font-size: 65px;
@@ -149,23 +140,10 @@ article{
     flex-wrap: wrap;
 }
 
-/* #classOverview{
-    background-color: white;
-} */
 
 #addPosts .selection {
     width: calc(100vw/3);
     border: 5px solid #a9cfe2;
-    height: 35vh;
-}
-
-.plus{
-    font-size: 40px;
-    text-align: right;
-    display: inline-block;
-    margin-left: calc(calc(100vw/3) - 40px);
-    top: 60vh;
-
 }
 
 footer{
@@ -201,7 +179,7 @@ footer{
 
     img.gifs{
         width: 270px;
-        height: 270[x];
+        height: 270px;
         margin-left: calc((calc(100vw/2) - 270px)/2);
     }
 
@@ -209,32 +187,22 @@ footer{
         position: relative;
         font-size: 30px;
         top: 15px;
-        left: 40px;
+        left: 30px;
         color: black;
     }
     
     #pageName{
-        /* width: 50vw; */
         font-family: 'Birthstone', cursive;
-        margin-left: 70px;
+        margin-left: 30px;
         margin-right: 150px;
         text-align: center;
         font-size: 60px;
     }
     
-    
     h2{
         margin-left: 2px;
         display: inline-block;
         width:  calc((0.3 * 100vw)/2);;
-    }
-
-    .plus{
-        font-size: 30px;
-        text-align: right;
-        display: inline-block;
-        margin-left: calc(calc(100vw/2) - 30px);
-        margin-top: 5px;
     }
 
     .titles{
@@ -258,18 +226,13 @@ footer{
 
 @media only screen and (max-width: 750px){
 
-
-    #addPosts{
-        height: 80vh;
-    }
-    
     #addPosts > .selection{
         width: 50%;
     }
 
     img.gifs{
         width: 200px;
-        height: 200[x];
+        height: 200px;
         margin-left: calc((calc(100vw/2) - 200px)/2);
     }
 
@@ -277,27 +240,19 @@ footer{
         position: relative;
         font-size: 30px;
         top: 15px;
-        left: 40px;
+        left: 30px;
         color: black;
     }
     
     #pageName{
-        font-size: 34px;
+        font-size: 48px;
+        margin-right: 110px;
     }
-    
     
     h2{
         margin-left: 2px;
         display: inline-block;
         width:  calc((0.3 * 100vw)/2);;
-    }
-
-    .plus{
-        font-size: 30px;
-        text-align: right;
-        display: inline-block;
-        margin-left: calc(calc(100vw/2) - 30px);
-        margin-top: 5px;
     }
 
     .titles{
@@ -318,24 +273,23 @@ footer{
         height: calc(15vh/4);
         
     }
+
+    .topnav{
+        width: 110px;
+    }
   
 }
 
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 620px){
 
-
-    #addPosts{
-        height: 80vh;
-    }
-    
     #addPosts > .selection{
         width: 50%;
     }
 
     img.gifs{
         width: 160px;
-        height: 160[x];
+        height: 160px;
         margin-left: calc((calc(100vw/2) - 160px)/2);
     }
 
@@ -343,12 +297,13 @@ footer{
         position: relative;
         font-size: 30px;
         top: 15px;
-        left: 40px;
+        left: 30px;
         color: black;
     }
     
     #pageName{
-        font-size: 30px;
+        font-size: 40px;
+        margin-left: 28px;
     }
     
     
@@ -356,14 +311,6 @@ footer{
         margin-left: 2px;
         display: inline-block;
         width:  calc((0.3 * 100vw)/2);;
-    }
-
-    .plus{
-        font-size: 30px;
-        text-align: right;
-        display: inline-block;
-        margin-left: calc(calc(100vw/2) - 30px);
-        margin-top: 5px;
     }
 
     .titles{
@@ -384,41 +331,101 @@ footer{
         height: calc(15vh/4);
         
     }
+
+    #logo{
+        width: 28px;
+        /* background-color: cadetblue; */
+    }
   
 }
 
-@media only screen and (max-width: 360px){
 
-    header{
-        height: 6vh;
+@media only screen and (max-width: 520px){
+
+    #pageName{
+        font-size: 36px;
     }
 
+}
 
-    article{
-        height: 94vh;
+@media only screen and (max-width: 480px){
+
+    #pageName{
+        font-size: 28px;
+    }
+
+}
+
+
+@media only screen and (max-width: 420px){
+
+    #topHeader{
+        height: 12vh;
+    }
+ 
+    #addPosts > .selection{
+        width: 100%;
+    }
+
+    img.gifs{
+        width: 220px;
+        height: 220px;
+        margin-left: calc((100vw - 220px)/2);
+    }
+
+    .header h1 {
+        position: relative;
+        font-size: 30px;
+        top: 15px;
+        left: 30px;
+        color: black;
     }
     
-    img.gifs{
-        width: 200px;
-        height: auto;
-        margin-left: calc((100vw - 200px)/2);
+    #pageName{
+        font-size: 25px;
+        margin-left: 5px;
     }
-
-    h1{
-        width:  calc(0.6 * 100vw);
-        display: inline-block;
-        text-align: center;
-        font-size: xx-large;
-        margin-top: 10px;
-    }
+    
     
     h2{
         margin-left: 2px;
         display: inline-block;
-        width: calc(0.3 * 100vw);
+        width:  calc(0.3 * 100vw);;
+    }
+
+    .titles{
+        width:calc(0.7 * 100vw);
+        font-size: small;
+    }
+
+    .locs{
+        font-size:x-small;
+    }
+
+    .p{
+        font-size: x-small;
+    }
+
+    .topnav a {
+        font-size: 12px;
+        height: calc(15vh/4);
         
     }
 
+    #logo{
+        width: 12px;
+        /* background-color: cadetblue; */
+    }
+
+    .topnav a {
+        font-size: 12px;
+        height: calc(12vh/4);
+        
+      }
+
+      header .topnav {
+        height: 12vh;
+    
+    }
+  
 }
-
-
