@@ -174,9 +174,9 @@ function getPostById(idNum){
         addPostReactionLove.style.display="inline-block";
         addPostReactionLaugh.style.display="inline-block";
 
-        addPostReactionSmile.style.marginLeft="4vw";
-        postReactionSimleInput.style.marginRight="7vw";
-        postReactionLoveInput.style.marginRight="7vw";
+        addPostReactionSmile.style.marginLeft="6vw";
+        postReactionSimleInput.style.marginRight="9vw";
+        postReactionLoveInput.style.marginRight="9vw";
 
         sector.append(addReactionsList);
         sector.append(line);
