@@ -1,5 +1,24 @@
 {
+  "name": "journalproject",
+  "version": "1.0.0",
+  "description": "## Description of our project TravelShare is an anonymous blogging website that allows users to make posts about their travel experiences. Users can also comment and react to posts.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rachiey/journalproject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rachiey/journalproject/issues"
+  },
+  "homepage": "https://github.com/Rachiey/journalproject#readme",
   "dependencies": {
-    "cool-ascii-faces": "^1.3.4"
+    "express": "^4.17.1"
   }
 }
