@@ -11,7 +11,7 @@ describe('mainPage.html', () => {
         test('it has a title', () => {
             const head = document.querySelector('title');
             expect(head).toBeTruthy();
-            expect(head.textContent).toContain('Journal Website - Home');
+            expect(head.textContent).toContain('TravelShare - Home');
         });
 
         test('css links to a .css file', () => {
@@ -33,12 +33,12 @@ describe('mainPage.html', () => {
         });
 
         test('the page has a favicon element', () => {
-            let iconLink = document.querySelector('link[rel="icon"]');
+            let iconLink = document.querySelector('link[rel="shortcut icon"]');
             expect(iconLink).toBeTruthy()
         });
 
         test('the favicon link is present', () => {
-            let iconLink = document.querySelector('link[rel="icon"]');
+            let iconLink = document.querySelector('link[rel="shortcut icon"]');
             expect(iconLink.getAttribute("href")).not.toEqual('#') 
         });
     })
