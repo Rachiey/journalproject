@@ -1,4 +1,4 @@
-const postData = require('../posts.json');
+const postData = require('./posts.json');
 const Post = require('./model');
 
 const express = require('express');
