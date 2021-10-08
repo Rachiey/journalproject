@@ -28,7 +28,7 @@ const posts="Entertainment";
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:3000/${posts}`)
+    fetch(`https://travel-share-journal.herokuapp.com/${posts}`)
     .then(obj => obj.json())
     .then(data => setValues(data.all))
 
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 function getPostById(idNum){
     console.log(typeof(idNum));    
     console.log(idNum);
-    fetch(`http://localhost:3000/posts/${idNum}`)
+    fetch(`https://travel-share-journal.herokuapp.com/posts/${idNum}`)
     .then(obj => obj.json())
     .then(data => {
         const newHeader=document.createElement('header');
@@ -190,7 +190,7 @@ function getPostById(idNum){
                 },
                 body: JSON.stringify(data),
             };
-            fetch(`http://localhost:3000/posts/reactions/${idNum}`, options)
+            fetch(`https://travel-share-journal.herokuapp.com/posts/reactions/${idNum}`, options)
                 .then(console.log("New reaction added"))
                 .catch(err => console.warn("Oops, something went wrong."))
         };
@@ -244,8 +244,7 @@ function getPostById(idNum){
                     },
                     body: JSON.stringify(data)
                 }
-                console.log(`http://localhost:3000/posts/comments/${idNum}`);
-                fetch(`http://localhost:3000/posts/comments/${idNum}`, options)
+                fetch(`https://travel-share-journal.herokuapp.com/posts/comments/${idNum}`, options)
                     .then(console.log("New comment added"))
                     .then(addTheComments(parseInt(idNum),postComment.value))
                     .then(postComment.value="")
