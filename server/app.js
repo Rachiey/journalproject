@@ -8,6 +8,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
+
 //GET
 //gets all posts
 app.get("/posts", (req, res) => {
@@ -58,6 +59,19 @@ app.get("/posts/reactions/:id", (req, res) => {
     }   
 });
 
+//gets posts based on category
+app.get("/:word", (req, res) => {
+    try {
+        const word =req.params.word.toLowerCase();
+        const matchedPosts = Post.all.filter(post => (post.category.toLowerCase()===word));
+        res.send({all :matchedPosts});
+    }
+    catch(err) {
+        res.statusCode = 404;
+        res.send(err.message)
+    }   
+});
+
 
 //POST
 //adds new post
@@ -96,12 +110,14 @@ app.put("/posts/reactions/:id", (req, res) => {
         const id = parseInt(req.params.id);
         const newReaction = req.body.reaction;
 
+        console.log(newReaction);
+
         //makes sure the post exists (so the user can actually react to it)
         if(id > Post.all.length) {
             throw new Error("Post not found");
         }
 
-        Post.newReaction(id, newReaction);
+        Post.addNewReaction(id, newReaction);
         res.send("Updated post");
     }
     catch(err) {
@@ -109,5 +125,6 @@ app.put("/posts/reactions/:id", (req, res) => {
         res.send(err.message);
     }
 })
+
 
 module.exports = app;

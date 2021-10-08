@@ -22,7 +22,7 @@ submitButton.className="submitButton";
 const checkIds=[];
 const selectPostID=[];
 
-const posts="Entertainment";
+const posts="Sightseeing";
 
 
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             }else{
                 newMsg.textContent=data[i].post.substring(0,220);
             }
-            
+
             newImg.className="gifs";
             newHeader.className="heads";
             newH1.className="titles";
@@ -114,7 +114,6 @@ function getPostById(idNum){
 
         newHeader.append(newH2);
         newHeader.append(newH1);
-        // newHeader.append(line)
         sector.append(newHeader);
         sector.append(newImg);
         sector.append(newMsg);
@@ -131,7 +130,7 @@ function getPostById(idNum){
         newMsg.style.fontFamily="'Montserrat', sans-serif";
         newMsg.style.fontSize="20px";
         newH1.style.fontSize="20px";
-        // newH1.style.marginBottom="8px";
+        newH1.style.marginBottom="8px";
         newMsg.style.marginBottom="8px";
         newMsg.style.marginTop="8px";
         

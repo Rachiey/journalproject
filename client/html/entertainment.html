@@ -5,103 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/preview.css">
+    <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="../javascript/preview.js"></script>
     <title>Entertainment</title>
+    <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/description-white-plane-icon-2-27.png" />
 </head>
 <body>
     <header id="topHeader">
         <div class="header">
-            <img src="img/logo.png" alt="logo" id="logo"/>
-            <h1 id="pageName">Travel Journal Website</h1>
+            <h1 id="logo"><img src="https://static.thenounproject.com/png/1429455-200.png" alt="logo" >TravelShare</h1> 
         </div>
-        <div class="topnav">
-            <a class="active" href="./mainPage.html">Home</a>
-            <a href="./entertainment.html">Entertainment</a>
-            <a href="./food.html">Food and drinks</a>
-            <a href="./sightseeing.html">Sightseeing</a>
-        </div>
-        <br>
-        <select id="slection">
-            <option value="">Select</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Food">Food and drink</option>
-            <option value="Sightseeing">Sightseeing</option>
-        </select>
-    </form>
     </header>
+    <div class="topnav" id ="myTopnav">
+        <a class="active" href="mainPage.html">Home</a>
+        <a href="sightseeing.html">Sightseeing</a>
+        <a href="food.html">Food and Drinks</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="javascript:void(0);" class="icon" onclick="expansion()">
+            <i class="fa fa-bars"></i>
+            </a>
+      </div>
     <main id="classOverview">
         <article id="addPosts">
-            <!-- <section class="selection" id="post_1">
-                <header class="heads">
-                    <h2 class="locs">Location</h2>
-                    <h1 class="titles">Title</h1>
-                </header>
-                <figure></figure>
-                <img class="gifs" src="https://media4.giphy.com/media/9A3t72abirdtyull0m/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g"></img>
-                <p id="p" class="p"></p>
-                <a class="plus" href=./comments.html> + </a>
-                
-            </section>
-            <section class="selection" id="post_2">
-                <header class="heads" >
-                    <h2 id="rep" class="locs">Location</h2>
-                    <h1 id="reps" class="titles">Title</h1>
-                </header>
-                <figure></figure>
-                <img class="gifs" src="https://media0.giphy.com/media/8cyrCiKwIt2r0U5DI2/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g"></img>
-                <p class="p">A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational  </p>
-                <a class="plus" href=./comments.html> + </a>
-            </section> -->
-            <!-- <section class="selection">
-                <header class="heads">
-                    <h2 class="locs">Location</h2>
-                    <h1 class="titles">Title</h1>
-                </header>
-                <figure></figure>
-                <img class="gifs" src="https://media2.giphy.com/media/xUOxeZc41DVT2l9laU/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g"></img>
-                <p class="p">A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational  </p>
-                <a class="plus" href=./comments.html> + </a>
-            </section>
-            <section class="selection">
-                <header class="heads">
-                    <h2 class="locs">Location</h2>
-                    <h1 class="titles">Title</h1>
-                </header>
-                <figure></figure>
-                <img class="gifs" src="https://media2.giphy.com/media/xUOxeZc41DVT2l9laU/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g"></img>
-                <p class="p">A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational  </p>
-                <a class="plus" href=./comments.html> + </a>
-            </section>
-            <section class="selection">
-                <header class="heads">
-                    <h2 class="locs">Location</h2>
-                    <h1 class="titles">Title</h1>
-                </header>
-                <figure></figure>
-                <img class="gifs" src="https://media2.giphy.com/media/xUOxeZc41DVT2l9laU/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g"></img>
-                <p class="p">A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational  </p>
-                <a class="plus" href=./comments.html> + </a>
-            </section>
-            <section class="selection">
-                <header class="heads">
-                    <h2 class="locs">Location</h2>
-                    <h1 class="titles">Title</h1>
-                </header>
-                <figure></figure>
-                <img class="gifs" src="https://media2.giphy.com/media/xUOxeZc41DVT2l9laU/giphy.gif?cid=2b97f132i3iuiuf7ecbnvmgfh1ruui2suyavurwvupaoz3re&rid=giphy.gif&ct=g"></img>
-                <p class="p">A project is an individual or collaborative enterprise that is carefully planned and researched about by students. At schools, educational  </p>
-                <a class="plus" href=./comments.html> + </a>
-            </section> -->
+           
         </article>
     </main>   
 
-    <article id="newPost"></article>
+    <article id="newPosts"></article>
 
-    <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
 
-    <footer>About us</footer>
-
-    
 </body>
 </html>
 

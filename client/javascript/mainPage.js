@@ -46,8 +46,6 @@ comments.addEventListener("input", (e) => {
   const maxLength = target.getAttribute("maxlength");
   let currentLength = target.value.length;
   counterPost.textContent = `${maxLength - currentLength} characters remaining`;
-// Button is enabled since textarea has text:
-//addPostButton.disabled = false;
 });
 
 
@@ -86,6 +84,14 @@ function submitPost(e) {
   };
 
 submitButton.addEventListener('click', e => {
-  e.preventDefault();
   submitPost(e);
 });
+
+function expansion() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " expanded";
+  } else {
+    x.className = "topnav";
+  }
+}
