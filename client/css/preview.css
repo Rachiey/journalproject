@@ -31,22 +31,8 @@ body{
 }
 
 .gifImg{
-    margin-left: 30%;
+    margin-left: 33%;
 }
-/* 
-.smile{
-    margin-left: 6vw;
-    margin-right: 9vw;
-    
-}
-
-.love{
-    margin-left: 9vw;
-}
-
-.laugh{
-    margin-left: 9vw;
-} */
 
 .header img {
     position: relative;
@@ -131,10 +117,10 @@ body{
     height: 5vh;
 }
 
-.title{
-    margin-top: 2px;
-    margin-left: 15%;
-    width:  calc((0.7 * 100vw)/2);
+.heads .postTitle{
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: 20%;
     display: inline-block;
     text-align: center;
     font-size: large;
@@ -153,7 +139,7 @@ body{
 .locs{
     margin-left: 2px;
     display: inline-block;
-    width:  calc((0.3 * 100vw)/3);
+    /* width:  calc((0.3 * 100vw)/3); */
     font-size: medium;
     font-family: 'Montserrat', sans-serif;
 }
@@ -177,16 +163,12 @@ article{
     border: 5px solid #a9cfe2;
 }
 
-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: blue;
-    text-align: center;
-    margin-bottom: 2px;
-
-}
+footer {
+    background-color: #187bcd;
+    padding: 5px;
+    margin-top: auto;
+    height: 60px;
+  }
 
 .p{
     margin-top: 5px;
@@ -230,7 +212,7 @@ footer{
       }
     }
 
-@media only screen and (max-width: 1050px){
+@media only screen and (max-width: 1100px){
 
 
     #addPosts{
@@ -247,16 +229,12 @@ footer{
         margin-left: calc((calc(100vw/2) - 270px)/2);
     }
 
-    
-    h2{
-        margin-left: 2px;
-        display: inline-block;
-        width:  calc((0.3 * 100vw)/2);;
-    }
-
     .titles{
         width:calc(0.7 * 100vw/2);
     }
+
+
+
 
 }
 
@@ -273,11 +251,6 @@ footer{
         margin-left: calc((calc(100vw/2) - 200px)/2);
     }
 
-    h2{
-        margin-left: 2px;
-        display: inline-block;
-        width:  calc((0.3 * 100vw)/2);;
-    }
 
     .titles{
         width:calc(0.7 * 100vw/2);
@@ -310,12 +283,6 @@ footer{
         width: 160px;
         height: 160px;
         margin-left: calc((calc(100vw/2) - 160px)/2);
-    }
-
-    h2{
-        margin-left: 2px;
-        display: inline-block;
-        width:  calc((0.3 * 100vw)/2);;
     }
 
     .titles{
@@ -439,12 +406,6 @@ footer{
         margin-left: 80px;
     }
     
-    
-    h2{
-        margin-left: 2px;
-        display: inline-block;
-        width:  calc(0.3 * 100vw);;
-    }
 
     .titles{
         width:calc(0.7 * 100vw);

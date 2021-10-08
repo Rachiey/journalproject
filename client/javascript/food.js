@@ -1,4 +1,3 @@
-
 const post_1=document.getElementById("post_1");
 const post_2=document.getElementById("post_2");
 const addPosts=document.getElementById("addPosts");
@@ -43,8 +42,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
             const newMsg=document.createElement('p');
             newH1.textContent=data[i].title;
             newH2.textContent=data[i].location;
-            newMsg.textContent=data[i].post;
             newImg.src=data[i].gif;
+
+            if(data[i].post.length <= 220 ){
+                newMsg.textContent=data[i].post;
+            }else{
+                newMsg.textContent=data[i].post.substring(0,220);
+            }
 
             newImg.className="gifs";
             newHeader.className="heads";
@@ -102,7 +106,7 @@ function getPostById(idNum){
 
         newImg.className="gifImg";
         newHeader.className="heads";
-        newH1.className="title";
+        newH1.className="postTitle";
         newH2.className="locs";
         sector.className="selection";
         newMsg.className="p";
@@ -148,10 +152,6 @@ function getPostById(idNum){
         postReactionLoveInput.type="submit";
         postReactionLaughInput.type="submit";
 
-        // addPostReactionSmile.className="smile";
-        // postReactionLoveInput.className="love";
-        // postReactionLaughInput.className="laugh";
-
         postReactionSimleInput.textContent=data.reactions.smile;
         postReactionLoveInput.textContent=data.reactions.love;
         postReactionLaughInput.textContent=data.reactions.laugh;
@@ -172,9 +172,9 @@ function getPostById(idNum){
         addPostReactionLove.style.display="inline-block";
         addPostReactionLaugh.style.display="inline-block";
 
-        addPostReactionSmile.style.marginLeft="4vw";
-        postReactionSimleInput.style.marginRight="7vw";
-        postReactionLoveInput.style.marginRight="7vw";
+        addPostReactionSmile.style.marginLeft="6vw";
+        postReactionSimleInput.style.marginRight="9vw";
+        postReactionLoveInput.style.marginRight="9vw";
 
         sector.append(addReactionsList);
         sector.append(line);
