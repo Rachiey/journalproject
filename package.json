@@ -1,26 +1,31 @@
 {
-  "name": "journalproject",
+  "name": "server",
   "version": "1.0.0",
-  "description": "## Description of our project TravelShare is an anonymous blogging website that allows users to make posts about their travel experiences. Users can also comment and react to posts.",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node ./server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "nodemon ./server/index.js"
+  "engines": {
+    "node": "12.19.0",
+    "npm": "6.14.8"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Rachiey/journalproject.git"
+   "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "dev": "nodemon index.js",
+    "start-dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Rachiey/journalproject/issues"
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "jest": "^27.2.4",
+    "nodemon": "^2.0.13",
+    "supertest": "^6.1.6",
+    "watchify": "^4.0.0"
   },
-  "homepage": "https://github.com/Rachiey/journalproject#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.13"
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   }
 }
